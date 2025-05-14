@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/CENAS/TelaInicial.unity
+    guid: d80b9fe994bf7fd4d9ba886582b09306
+  - enabled: 1
+    path: Assets/CENAS/TelaLogin.unity
+    guid: 88f9051ef984d7f4abdf911f4b48200d
+  - enabled: 1
+    path: Assets/CENAS/TelaCadastro.unity
+    guid: ba3de15a1f60ea94284cbc7e9caf2352
+  - enabled: 1
+    path: Assets/CENAS/TelaMenu.unity
+    guid: ec45278367179b54ea14a3403c31c914
+  - enabled: 1
+    path: Assets/CENAS/TelaNiveis.unity
+    guid: 338245a552cd3af42becffe9869cc0e7
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_UseUCBPForAssetBundles: 0
