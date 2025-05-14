@@ -4,7 +4,8 @@ public class PersonagemController : MonoBehaviour
 {
     public float velocidade = 5f;
     private Rigidbody2D rb;
-    private Vector2 direcao;
+    private Vector2 direcaoTeclado;
+    private Vector2 direcaoUI;
 
     void Start()
     {
@@ -13,15 +14,37 @@ public class PersonagemController : MonoBehaviour
 
     void Update()
     {
-        // Movimento contínuo com base na direção
-        rb.linearVelocity = direcao * velocidade;
+        // Movimento pelo teclado
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        direcaoTeclado = new Vector2(moveX, moveY).normalized;
     }
 
+    void FixedUpdate()
+    {
+        Vector2 direcaoFinal = (direcaoTeclado + direcaoUI).normalized;
+        rb.MovePosition(rb.position + direcaoFinal * velocidade * Time.fixedDeltaTime);
+    }
     // Métodos que os botões vão chamar:
-    public void MoverCima()    => direcao = Vector2.up;
-    public void MoverBaixo()   => direcao = Vector2.down;
-    public void MoverEsquerda()=> direcao = Vector2.left;
-    public void MoverDireita() => direcao = Vector2.right;
-
-    public void PararMovimento() => direcao = Vector2.zero;
+    public void MoverCima()
+    { 
+        direcaoUI = Vector2.up;
+    }
+    public void MoverBaixo()
+    {
+        direcaoUI = Vector2.down;
+    }
+    public void MoverEsquerda() 
+    {
+        direcaoUI = Vector2.left;
+    }
+    public void MoverDireita()
+    {
+        direcaoUI = Vector2.right;
+    }
+    public void PararMovimento()
+    {
+        direcaoUI = Vector2.zero;
+    }
 }
