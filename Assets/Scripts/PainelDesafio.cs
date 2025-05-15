@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PainelDesafio : MonoBehaviour
 {
@@ -86,7 +87,8 @@ public class PainelDesafio : MonoBehaviour
             if (!jogador.EstaVivo())
             {
                 Debug.Log("Game Over!");
-                // criar painel
+                PlayerPrefs.SetString("UltimaCena", SceneManager.GetActiveScene().name); // <- Salva o nome da cena atual (nível)
+                SceneManager.LoadScene("FimJogo");
             }
         }
     }

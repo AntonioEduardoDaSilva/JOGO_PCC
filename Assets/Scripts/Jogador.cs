@@ -13,8 +13,12 @@ public class Jogador
         this.idade = idade;
         this.vidas = vidas;
     }
+    public void ResetarVidas()
+    {
+        vidas = 5;
+    }
 
-        public void PerderVida()
+    public void PerderVida()
     {
         if (vidas > 0)
             vidas--;
