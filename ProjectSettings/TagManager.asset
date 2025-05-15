@@ -9,6 +9,7 @@ TagManager:
   - button_nivel3
   - cadeado1
   - cadeado2
+  - Zona
   layers:
   - Default
   - TransparentFX
