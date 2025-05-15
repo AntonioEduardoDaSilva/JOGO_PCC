@@ -6,13 +6,12 @@ public class PainelDesafio : MonoBehaviour
 {
     public GameObject painelDesafio;
     public GameObject sinalPositivo;
+    public GameObject sinalNegativo;
     public Button[] botoesResposta;
     public int indiceCorreta = 0;
     public GameObject objetoColetado;
-
     public TMP_Text pontosTexto;
     public Image[] coracoes;
-
     private Jogador jogador;
     private bool desafioConcluido = false;
     private int pontos = 0;
@@ -21,6 +20,7 @@ public class PainelDesafio : MonoBehaviour
     {
         painelDesafio.SetActive(false);
         sinalPositivo.SetActive(false);
+        sinalNegativo.SetActive(false);
         
         jogador = GerenciadorJogadores.instancia.jogadorAtual;
 
@@ -78,6 +78,8 @@ public class PainelDesafio : MonoBehaviour
         {
             jogador.PerderVida();
             AtualizarCoracoes();
+            sinalNegativo.SetActive(true);
+            Invoke("FecharPainelNegativo", 2f);
 
             Debug.Log($"Resposta errada! Vidas restantes: {jogador.vidas}");
 
@@ -116,5 +118,10 @@ public class PainelDesafio : MonoBehaviour
     {
         painelDesafio.SetActive(false);
         sinalPositivo.SetActive(false);
+        sinalNegativo.SetActive(false);
+    }
+    void FecharPainelNegativo()
+    {
+        sinalNegativo.SetActive(false);
     }
 }
