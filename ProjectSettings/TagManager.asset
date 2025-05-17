@@ -47,5 +47,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: UI
+    uniqueID: 4212038307
+    locked: 0
+  - name: Personagem
+    uniqueID: 3570055735
+    locked: 0
+  - name: aviao
+    uniqueID: 1918263249
+    locked: 0
   m_RenderingLayers:
   - Default
