@@ -13,6 +13,8 @@ public class PainelDesafio : MonoBehaviour
     public GameObject objetoColetado;
     public TMP_Text pontosTexto;
     public Image[] coracoes;
+    public GameObject personagem;
+    public GameObject aviao;
     private Jogador jogador;
     private bool desafioConcluido = false;
     private int pontos = 0;
@@ -22,7 +24,7 @@ public class PainelDesafio : MonoBehaviour
         painelDesafio.SetActive(false);
         sinalPositivo.SetActive(false);
         sinalNegativo.SetActive(false);
-        
+
         jogador = GerenciadorJogadores.instancia.jogadorAtual;
 
         if (jogador == null)
@@ -41,6 +43,11 @@ public class PainelDesafio : MonoBehaviour
         {
             painelDesafio.SetActive(true);
             AtribuirListeners();
+
+            if (personagem != null)
+                personagem.SetActive(false);
+            if (aviao != null)
+                aviao.SetActive(false);
         }
     }
 
@@ -87,7 +94,7 @@ public class PainelDesafio : MonoBehaviour
             if (!jogador.EstaVivo())
             {
                 Debug.Log("Game Over!");
-                PlayerPrefs.SetString("UltimaCena", SceneManager.GetActiveScene().name); // <- Salva o nome da cena atual (nível)
+                PlayerPrefs.SetString("UltimaCena", SceneManager.GetActiveScene().name);
                 SceneManager.LoadScene("FimJogo");
             }
         }
@@ -105,14 +112,7 @@ public class PainelDesafio : MonoBehaviour
     {
         for (int i = 0; i < coracoes.Length; i++)
         {
-            if (i < jogador.vidas)
-            {
-                coracoes[i].enabled = true; // Mostra o coração
-            }
-            else
-            {
-                coracoes[i].enabled = false; // Esconde o coração
-            }
+            coracoes[i].enabled = (i < jogador.vidas);
         }
     }
 
@@ -120,8 +120,13 @@ public class PainelDesafio : MonoBehaviour
     {
         painelDesafio.SetActive(false);
         sinalPositivo.SetActive(false);
-        sinalNegativo.SetActive(false);
+
+        if (personagem != null)
+            personagem.SetActive(true);
+        if (aviao != null)
+                aviao.SetActive(true);
     }
+
     void FecharPainelNegativo()
     {
         sinalNegativo.SetActive(false);
