@@ -15,9 +15,12 @@ public class PainelDesafio : MonoBehaviour
     public Image[] coracoes;
     public GameObject personagem;
     public GameObject aviao;
+    public GameObject espelho;
     private Jogador jogador;
     private bool desafioConcluido = false;
+    private bool desafioConcluido1 = false;
     private int pontos = 0;
+    public string[] novosTextos;
 
     void Start()
     {
@@ -48,6 +51,47 @@ public class PainelDesafio : MonoBehaviour
                 personagem.SetActive(false);
             if (aviao != null)
                 aviao.SetActive(false);
+            if (espelho != null)
+                espelho.SetActive(false);
+            
+        }
+    }
+    public void AbrirPainel1()
+    {
+        if (!desafioConcluido1)
+        {
+            AtualizarTextosDosBotoes();
+            painelDesafio.SetActive(true);
+            AtribuirListeners();
+
+            if (personagem != null)
+                personagem.SetActive(false);
+            if (aviao != null)
+                aviao.SetActive(false);
+            if (espelho != null)
+                espelho.SetActive(false);
+            
+        }
+    }
+   void AtualizarTextosDosBotoes()
+    {
+        // Textos definidos localmente aqui
+        string[] novosTextos = { "E", "G", "P", "U" };
+
+        for (int i = 0; i < botoesResposta.Length; i++)
+        {
+            if (i < novosTextos.Length)
+            {
+                TMP_Text textoBotao = botoesResposta[i].GetComponentInChildren<TMP_Text>();
+                if (textoBotao != null)
+                {
+                    textoBotao.text = novosTextos[i];
+                }
+                else
+                {
+                    Debug.LogWarning("Botão sem TMP_Text: " + botoesResposta[i].name);
+                }
+            }
         }
     }
 
@@ -124,7 +168,9 @@ public class PainelDesafio : MonoBehaviour
         if (personagem != null)
             personagem.SetActive(true);
         if (aviao != null)
-                aviao.SetActive(true);
+            aviao.SetActive(true);
+        if (espelho != null)
+            espelho.SetActive(true);
     }
 
     void FecharPainelNegativo()

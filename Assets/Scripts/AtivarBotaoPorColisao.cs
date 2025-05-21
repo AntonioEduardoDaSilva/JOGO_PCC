@@ -3,6 +3,7 @@ using UnityEngine;
 public class AtivarBotaoPorColisao : MonoBehaviour
 {
     public GameObject botaoUI;
+    public string tagDoJogador = "personagem";
 
     void Start()
     {
@@ -12,8 +13,7 @@ public class AtivarBotaoPorColisao : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Colisão com: " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Zona"))
+        if (collision.gameObject.CompareTag(tagDoJogador))
         {
             if (botaoUI != null)
                 botaoUI.SetActive(true);
@@ -22,10 +22,11 @@ public class AtivarBotaoPorColisao : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Zona"))
+        if (collision.gameObject.CompareTag(tagDoJogador))
         {
             if (botaoUI != null)
                 botaoUI.SetActive(false);
         }
     }
 }
+

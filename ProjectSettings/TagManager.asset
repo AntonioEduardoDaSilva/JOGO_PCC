@@ -10,6 +10,8 @@ TagManager:
   - cadeado1
   - cadeado2
   - Zona
+  - espelho
+  - personagem
   layers:
   - Default
   - TransparentFX
