@@ -19,14 +19,31 @@ public class PainelDesafio : MonoBehaviour
     private Jogador jogador;
     private bool desafioConcluido = false;
     private bool desafioConcluido1 = false;
-    private int pontos = 0;
-    public string[] novosTextos;
+    private int pontos = 0; 
+    private string[] novosTextos;
+    private Desafio[] desafios;
+    private int indiceDesafioatual = 0;
+    public GameObject imagemLetraA;
+    public GameObject imagemLetraE;
 
     void Start()
     {
+       desafios = new Desafio[]
+        {
+            new Desafio(new string[] { "A", "S", "E", "M" }, 0, aviao, imagemLetraA),
+            new Desafio(new string[] { "G", "H", "E", "U" }, 2, espelho, imagemLetraE),
+            //new Desafio(new string[] { "L", "O", "I", "U" }, 3)
+        };
         painelDesafio.SetActive(false);
         sinalPositivo.SetActive(false);
         sinalNegativo.SetActive(false);
+        for (int i = 0; i < desafios.Length; i++)
+        {
+            if (desafios[i].ImagemDesafio != null)
+            {
+                desafios[i].ImagemDesafio.SetActive(false);
+            }
+        }
 
         jogador = GerenciadorJogadores.instancia.jogadorAtual;
 
@@ -39,11 +56,11 @@ public class PainelDesafio : MonoBehaviour
         AtualizarPontosUI();
         AtualizarCoracoes();
     }
-
     public void AbrirPainel()
     {
-        if (!desafioConcluido)
+        if (!desafios[indiceDesafioatual].concluido)
         {
+            //AtualizarTextosDosBotoes();
             painelDesafio.SetActive(true);
             AtribuirListeners();
 
@@ -56,27 +73,10 @@ public class PainelDesafio : MonoBehaviour
             
         }
     }
-    public void AbrirPainel1()
-    {
-        if (!desafioConcluido1)
-        {
-            AtualizarTextosDosBotoes();
-            painelDesafio.SetActive(true);
-            AtribuirListeners();
-
-            if (personagem != null)
-                personagem.SetActive(false);
-            if (aviao != null)
-                aviao.SetActive(false);
-            if (espelho != null)
-                espelho.SetActive(false);
-            
-        }
-    }
-   void AtualizarTextosDosBotoes()
+   public void AtualizarTextosDosBotoes()
     {
         // Textos definidos localmente aqui
-        string[] novosTextos = { "E", "G", "P", "U" };
+        string[] novosTextos = desafios[indiceDesafioatual].alternativas;
 
         for (int i = 0; i < botoesResposta.Length; i++)
         {
@@ -94,7 +94,10 @@ public class PainelDesafio : MonoBehaviour
             }
         }
     }
-
+    public void AtualizarImagem()
+    {
+        desafios[indiceDesafioatual].ImagemDesafio.SetActive(true);
+    }
     void AtribuirListeners()
     {
         for (int i = 0; i < botoesResposta.Length; i++)
@@ -104,14 +107,13 @@ public class PainelDesafio : MonoBehaviour
             botoesResposta[i].onClick.AddListener(() => VerificarResposta(index));
         }
     }
-
     public void VerificarResposta(int indiceEscolhido)
     {
         Debug.Log($"Clique detectado no botão {indiceEscolhido}");
 
-        if (desafioConcluido || jogador == null) return;
+        if (desafios[indiceDesafioatual].concluido || jogador == null) return;
 
-        if (indiceEscolhido == indiceCorreta)
+        if (desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
         {
             pontos++;
             AtualizarPontosUI();
@@ -121,9 +123,9 @@ public class PainelDesafio : MonoBehaviour
             desafioConcluido = true;
             Debug.Log("Resposta correta!");
 
-            if (objetoColetado != null)
+            if (desafios[indiceDesafioatual].objetoColetado != null)
             {
-                Destroy(objetoColetado);
+                Destroy(desafios[indiceDesafioatual].objetoColetado);
             }
         }
         else
@@ -143,7 +145,6 @@ public class PainelDesafio : MonoBehaviour
             }
         }
     }
-
     void AtualizarPontosUI()
     {
         if (pontosTexto != null)
@@ -151,7 +152,6 @@ public class PainelDesafio : MonoBehaviour
             pontosTexto.text = $"PONTOS: {pontos}";
         }
     }
-
     void AtualizarCoracoes()
     {
         for (int i = 0; i < coracoes.Length; i++)
@@ -159,12 +159,22 @@ public class PainelDesafio : MonoBehaviour
             coracoes[i].enabled = (i < jogador.vidas);
         }
     }
+    public void mudarDesafio(int id)
+    {
+        indiceDesafioatual = id;
+    }
 
     void FecharPainel()
     {
         painelDesafio.SetActive(false);
         sinalPositivo.SetActive(false);
-
+        for (int i = 0; i < desafios.Length; i++)
+        {
+            if (desafios[i].ImagemDesafio != null)
+            {
+                desafios[i].ImagemDesafio.SetActive(false);
+            }
+        }
         if (personagem != null)
             personagem.SetActive(true);
         if (aviao != null)
