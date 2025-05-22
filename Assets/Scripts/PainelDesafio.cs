@@ -16,6 +16,9 @@ public class PainelDesafio : MonoBehaviour
     public GameObject personagem;
     public GameObject aviao;
     public GameObject espelho;
+    public GameObject ioio;
+    public GameObject oculos;
+    public GameObject urso;
     private Jogador jogador;
     private bool desafioConcluido = false;
     private bool desafioConcluido1 = false;
@@ -25,6 +28,9 @@ public class PainelDesafio : MonoBehaviour
     private int indiceDesafioatual = 0;
     public GameObject imagemLetraA;
     public GameObject imagemLetraE;
+    public GameObject imagemLetraI;
+    public GameObject imagemLetraO;
+    public GameObject imagemLetraU;
 
     void Start()
     {
@@ -32,7 +38,9 @@ public class PainelDesafio : MonoBehaviour
         {
             new Desafio(new string[] { "A", "S", "E", "M" }, 0, aviao, imagemLetraA),
             new Desafio(new string[] { "G", "H", "E", "U" }, 2, espelho, imagemLetraE),
-            //new Desafio(new string[] { "L", "O", "I", "U" }, 3)
+            new Desafio(new string[] { "L", "O", "U", "I" }, 3, ioio, imagemLetraI),
+            new Desafio(new string[] { "N", "O", "P", "A" }, 1, oculos, imagemLetraO),
+            new Desafio(new string[] { "A", "I", "T", "U" }, 3, urso, imagemLetraU)
         };
         painelDesafio.SetActive(false);
         sinalPositivo.SetActive(false);
@@ -64,12 +72,7 @@ public class PainelDesafio : MonoBehaviour
             painelDesafio.SetActive(true);
             AtribuirListeners();
 
-            if (personagem != null)
-                personagem.SetActive(false);
-            if (aviao != null)
-                aviao.SetActive(false);
-            if (espelho != null)
-                espelho.SetActive(false);
+            esconderObjetos();
             
         }
     }
@@ -93,6 +96,36 @@ public class PainelDesafio : MonoBehaviour
                 }
             }
         }
+    }
+    void esconderObjetos()
+    {
+        if (personagem != null)
+            personagem.SetActive(false);
+        if (aviao != null)
+            aviao.SetActive(false);
+        if (espelho != null)
+            espelho.SetActive(false);
+        if (oculos != null)
+            oculos.SetActive(false);
+        if (ioio != null)
+            ioio.SetActive(false);
+        if (urso != null)
+            urso.SetActive(false);
+    }
+    void mostrarObjetos()
+    {
+        if (personagem != null)
+            personagem.SetActive(true);
+        if (aviao != null)
+            aviao.SetActive(true);
+        if (espelho != null)
+            espelho.SetActive(true);
+        if (ioio != null)
+            ioio.SetActive(true);
+        if (oculos != null)
+            oculos.SetActive(true);
+        if (urso != null)
+            urso.SetActive(true);
     }
     public void AtualizarImagem()
     {
@@ -175,12 +208,7 @@ public class PainelDesafio : MonoBehaviour
                 desafios[i].ImagemDesafio.SetActive(false);
             }
         }
-        if (personagem != null)
-            personagem.SetActive(true);
-        if (aviao != null)
-            aviao.SetActive(true);
-        if (espelho != null)
-            espelho.SetActive(true);
+        mostrarObjetos();
     }
 
     void FecharPainelNegativo()
