@@ -20,9 +20,9 @@ public class PainelDesafio : MonoBehaviour
     public GameObject oculos;
     public GameObject urso;
     private Jogador jogador;
-    private bool desafioConcluido = false;
-    private bool desafioConcluido1 = false;
-    private int pontos = 0; 
+    //private bool desafioConcluido = false;
+    //private bool desafioConcluido1 = false;
+    //private int pontos = 0; 
     private string[] novosTextos;
     private Desafio[] desafios;
     private int indiceDesafioatual = 0;
@@ -133,6 +133,7 @@ public class PainelDesafio : MonoBehaviour
     }
     void AtribuirListeners()
     {
+        AtualizarTextosDosBotoes();
         for (int i = 0; i < botoesResposta.Length; i++)
         {
             int index = i;
@@ -148,18 +149,19 @@ public class PainelDesafio : MonoBehaviour
 
         if (desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
         {
-            pontos++;
+            jogador.pontos++;
             AtualizarPontosUI();
-
-            sinalPositivo.SetActive(true);
-            Invoke("FecharPainel", 2f);
-            desafioConcluido = true;
-            Debug.Log("Resposta correta!");
 
             if (desafios[indiceDesafioatual].objetoColetado != null)
             {
-                Destroy(desafios[indiceDesafioatual].objetoColetado);
+                desafios[indiceDesafioatual].objetoColetado.SetActive(false);
+                Destroy(desafios[indiceDesafioatual].objetoColetado, 0.1f);
             }
+            sinalPositivo.SetActive(true);
+            Invoke("FecharPainel", 2f);
+            desafios[indiceDesafioatual].concluido = true;
+            Debug.Log("Resposta correta!");
+
         }
         else
         {
@@ -182,7 +184,7 @@ public class PainelDesafio : MonoBehaviour
     {
         if (pontosTexto != null)
         {
-            pontosTexto.text = $"PONTOS: {pontos}";
+            pontosTexto.text = $"PONTOS: {jogador.pontos}";
         }
     }
     void AtualizarCoracoes()

@@ -5,13 +5,15 @@ public class Jogador
     public string nomeUsuario;
     public int idade;
     public int vidas = 5;
+    public int pontos = 0;
 
-    public Jogador(string nomeCompleto, string nomeUsuario, int idade, int vidas = 5)
+    public Jogador(string nomeCompleto, string nomeUsuario, int idade, int vidas = 5, int pontos = 0)
     {
         this.nomeCompleto = nomeCompleto;
         this.nomeUsuario = nomeUsuario;
         this.idade = idade;
         this.vidas = vidas;
+        this.pontos = pontos;
     }
     public void ResetarVidas()
     {

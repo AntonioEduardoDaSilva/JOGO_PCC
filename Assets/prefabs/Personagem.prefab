@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2123384893446056677}
   - component: {fileID: 2427250189177850784}
   - component: {fileID: 8727098728990093450}
+  - component: {fileID: -7340693555089026110}
   m_Layer: 0
   m_Name: Personagem
   m_TagString: personagem
@@ -245,3 +246,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   botaoUI: {fileID: 0}
   tagDoJogador: Player
+--- !u!114 &-7340693555089026110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897183498479781421}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5061c54fe478e2741adcef92c4c48272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidade: 5

@@ -660,6 +660,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225701864}
   m_CullTransparentMesh: 1
+--- !u!1 &227614659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2897183498479781421, guid: 6bec203faf9540b4aa0671971741b345, type: 3}
+  m_PrefabInstance: {fileID: 2957957074879687272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &227614660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2123384893446056677, guid: 6bec203faf9540b4aa0671971741b345, type: 3}
+  m_PrefabInstance: {fileID: 2957957074879687272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227614659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5061c54fe478e2741adcef92c4c48272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &313889198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1241,20 +1257,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: AbrirPainel
-        m_Mode: 1
+        m_MethodName: mudarDesafio
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: mudarDesafio
-        m_Mode: 3
+        m_MethodName: AbrirPainel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1486,20 +1502,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: AbrirPainel
-        m_Mode: 1
+        m_MethodName: mudarDesafio
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: mudarDesafio
-        m_Mode: 3
+        m_MethodName: AbrirPainel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1849,8 +1865,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: AbrirPainel
-        m_Mode: 1
+        m_MethodName: mudarDesafio
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1861,8 +1877,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: mudarDesafio
-        m_Mode: 3
+        m_MethodName: AbrirPainel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2147,7 +2163,7 @@ MonoBehaviour:
   - {fileID: 1404496257}
   - {fileID: 1845481405}
   - {fileID: 1174923243}
-  personagem: {fileID: 0}
+  personagem: {fileID: 227614659}
   aviao: {fileID: 84917721}
   espelho: {fileID: 959517301}
   ioio: {fileID: 1066537216}
@@ -4456,20 +4472,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: AbrirPainel
-        m_Mode: 1
+        m_MethodName: mudarDesafio
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: mudarDesafio
-        m_Mode: 3
+        m_MethodName: AbrirPainel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4770,20 +4786,20 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: AbrirPainel
-        m_Mode: 1
+        m_MethodName: mudarDesafio
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 869668355}
         m_TargetAssemblyTypeName: PainelDesafio, Assembly-CSharp
-        m_MethodName: mudarDesafio
-        m_Mode: 3
+        m_MethodName: AbrirPainel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5615,34 +5631,66 @@ PrefabInstance:
     - target: {fileID: 1237388228059953454, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 227614660}
     - target: {fileID: 1237388228059953454, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 227614660}
+    - target: {fileID: 1237388228059953454, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoverBaixo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237388228059953454, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PararMovimento
       objectReference: {fileID: 0}
     - target: {fileID: 3242384714837732824, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 227614660}
     - target: {fileID: 3242384714837732824, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 227614660}
+    - target: {fileID: 3242384714837732824, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoverEsquerda
+      objectReference: {fileID: 0}
+    - target: {fileID: 3242384714837732824, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PararMovimento
       objectReference: {fileID: 0}
     - target: {fileID: 3719840850856906436, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 227614660}
     - target: {fileID: 3719840850856906436, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 227614660}
+    - target: {fileID: 3719840850856906436, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoverCima
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719840850856906436, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PararMovimento
       objectReference: {fileID: 0}
     - target: {fileID: 4550563056227517014, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 227614660}
     - target: {fileID: 4550563056227517014, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 227614660}
+    - target: {fileID: 4550563056227517014, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MoverDireita
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550563056227517014, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PararMovimento
       objectReference: {fileID: 0}
     - target: {fileID: 4768633895319952492, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_Name
