@@ -149,6 +149,14 @@ public class PainelDesafio : MonoBehaviour
 
         if (desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
         {
+            LivroItem itemTeste = new LivroItem
+            {
+                palavraPortugues = botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text,
+                imagem = Resources.Load<Sprite>("Componentes tela nivel 1/aviao"),
+                sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalAviao"),
+                comodoAprendido = "Quarto"
+            };
+            LivroData.instancia.itensAprendidos.Add(itemTeste);
             jogador.pontos++;
             AtualizarPontosUI();
 
