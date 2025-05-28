@@ -149,11 +149,44 @@ public class PainelDesafio : MonoBehaviour
 
         if (desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
         {
+            Sprite imagem = Resources.Load<Sprite>("Componentes tela nivel 1/aviao");
+            Sprite sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalAviao");
+            if (botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text == "A"
+            && desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
+            {
+                imagem = Resources.Load<Sprite>("Componentes tela nivel 1/aviao");
+                sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalAviao");
+            }
+            else if (botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text == "E"
+            && desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
+            {
+                imagem = Resources.Load<Sprite>("Componentes tela nivel 1/espelho");
+                sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalEspelho");
+            }
+            else if (botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text == "I"
+            && desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
+            {
+                imagem = Resources.Load<Sprite>("Componentes tela nivel 1/ioio");
+                sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalIoio");
+            }
+            else if (botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text == "O"
+            && desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
+            {
+                imagem = Resources.Load<Sprite>("Componentes tela nivel 1/oculos");
+                sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalOculos");
+            }
+            else if (botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text == "U"
+            && desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
+            {
+                imagem = Resources.Load<Sprite>("Componentes tela nivel 1/urso");
+                sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalUrso");
+            }
+            
             LivroItem itemTeste = new LivroItem
             {
                 palavraPortugues = botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text,
-                imagem = Resources.Load<Sprite>("Componentes tela nivel 1/aviao"),
-                sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalAviao"),
+                imagem = imagem,
+                sinalLibras = sinalLibras,
                 comodoAprendido = "Quarto"
             };
             LivroData.instancia.itensAprendidos.Add(itemTeste);
