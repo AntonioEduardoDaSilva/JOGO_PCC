@@ -156,6 +156,7 @@ public class PainelDesafio : MonoBehaviour
             {
                 imagem = Resources.Load<Sprite>("Componentes tela nivel 1/aviao");
                 sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalAviao");
+                
             }
             else if (botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text == "E"
             && desafios[indiceDesafioatual].indiceCorreto == indiceEscolhido)
@@ -181,7 +182,6 @@ public class PainelDesafio : MonoBehaviour
                 imagem = Resources.Load<Sprite>("Componentes tela nivel 1/urso");
                 sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalUrso");
             }
-            
             LivroItem itemTeste = new LivroItem
             {
                 palavraPortugues = botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text,
@@ -189,7 +189,7 @@ public class PainelDesafio : MonoBehaviour
                 sinalLibras = sinalLibras,
                 comodoAprendido = "Quarto"
             };
-            LivroData.instancia.itensAprendidos.Add(itemTeste);
+            LivroData.instancia.AdicionarItemAoLivro(jogador.nomeUsuario, itemTeste);
             jogador.pontos++;
             AtualizarPontosUI();
 
@@ -239,7 +239,6 @@ public class PainelDesafio : MonoBehaviour
     {
         indiceDesafioatual = id;
     }
-
     void FecharPainel()
     {
         painelDesafio.SetActive(false);
@@ -253,7 +252,6 @@ public class PainelDesafio : MonoBehaviour
         }
         mostrarObjetos();
     }
-
     void FecharPainelNegativo()
     {
         sinalNegativo.SetActive(false);

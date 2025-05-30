@@ -4,33 +4,35 @@ using UnityEngine.SceneManagement;
 
 public class LivroManager : MonoBehaviour
 {
-    public Transform containerLivro;        // Referência ao GridLayout
-    public GameObject prefabItemLivro;      // Prefab visual para cada item
+    public Transform containerLivro;
+    public GameObject prefabItemLivro;
+
+    private string jogadorAtualID = GerenciadorJogadores.instancia.jogadorAtual.nomeUsuario; // Substitua pelo ID real do jogador logado
 
     void Start()
     {
-        AtualizarLivroUI(); // Carrega os dados do singleton ao abrir a cena
-        Debug.Log("Itens no livro: " + LivroData.instancia.itensAprendidos.Count);
+        AtualizarLivroUI();
     }
 
     public void AtualizarLivroUI()
     {
-        // Limpa a UI atual
         foreach (Transform child in containerLivro)
         {
             Destroy(child.gameObject);
         }
 
-        // Cria os itens a partir do singleton
-        foreach (LivroItem item in LivroData.instancia.itensAprendidos)
+        var itens = LivroData.instancia.ObterLivroDoJogador(jogadorAtualID);
+
+        foreach (LivroItem item in itens)
         {
             GameObject novoCard = Instantiate(prefabItemLivro, containerLivro);
             ItemLivroUI ui = novoCard.GetComponent<ItemLivroUI>();
             ui.Configurar(item);
-            Debug.Log("Novo item adicionado ao livro");
         }
 
+        Debug.Log("Itens do jogador carregados: " + itens.Count);
     }
+
     public void voltarParaMenu()
     {
         SceneManager.LoadScene("TelaMenu");

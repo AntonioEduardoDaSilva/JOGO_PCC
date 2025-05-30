@@ -37,9 +37,12 @@ public class telaCadastro : MonoBehaviour
         else if (!int.TryParse(idadeStr, out int idade) || idade < 0)
         {
             painelErroIdadeNegativa.SetActive(true); return;
-        }else {
+        }
+        else
+        {
             Jogador novo = new Jogador(nome, usuario, idade);
-        GerenciadorJogadores.instancia.AdicionarJogador(novo);
+            GerenciadorJogadores.instancia.AdicionarJogador(novo);
+            LivroData.instancia.CriarLivroParaJogador(usuario);
         }
         painelErroCampos.SetActive(false);
         painelErroUsuario.SetActive(false);

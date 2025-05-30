@@ -4,45 +4,9 @@ using UnityEngine;
 public class LivroData : MonoBehaviour
 {
     public static LivroData instancia;
-    public List<LivroItem> itensAprendidos;
-    void Start()
-    {
-        LivroItem itemTeste = new LivroItem
-        {
-            palavraPortugues = "Avião",
-            imagem = Resources.Load<Sprite>("Componentes tela nivel 1/aviao"),
-            sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalAviao"),
-            comodoAprendido = "Quarto"
-        };
-        LivroItem itemTeste1 = new LivroItem
-        {
-            palavraPortugues = "Espelho",
-            imagem = Resources.Load<Sprite>("Componentes tela nivel 1/aviao"),
-            sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalAviao"),
-            comodoAprendido = "Quarto"
-        };
-        LivroItem itemTeste2 = new LivroItem
-        {
-            palavraPortugues = "oculos",
-            imagem = Resources.Load<Sprite>("Componentes tela nivel 1/aviao"),
-            sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalAviao"),
-            comodoAprendido = "Quarto"
-        };
 
-        // Adiciona ao singleton
-        LivroData.instancia.itensAprendidos.Add(itemTeste);
-        LivroData.instancia.itensAprendidos.Add(itemTeste1);
-        LivroData.instancia.itensAprendidos.Add(itemTeste2);
-        LivroData.instancia.itensAprendidos.Add(itemTeste2);
-        LivroData.instancia.itensAprendidos.Add(itemTeste2);
-        LivroData.instancia.itensAprendidos.Add(itemTeste2);
-        
-        Debug.Log("Item adicionado: " + itemTeste.palavraPortugues);
-        Debug.Log("Imagem carregada: " + (itemTeste.imagem != null));
-        Debug.Log("Sinal carregado: " + (itemTeste.sinalLibras != null));
-
-    }
-
+    // Dicionário que associa um ID de jogador com seus itens aprendidos
+    public Dictionary<string, List<LivroItem>> livrosPorJogador = new Dictionary<string, List<LivroItem>>();
 
     private void Awake()
     {
@@ -55,5 +19,35 @@ public class LivroData : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    // Cria um novo livro para o jogador
+    public void CriarLivroParaJogador(string jogadorID)
+    {
+        if (!livrosPorJogador.ContainsKey(jogadorID))
+        {
+            livrosPorJogador[jogadorID] = new List<LivroItem>();
+            Debug.Log("Livro criado para jogador: " + jogadorID);
+        }
+    }
+
+    // Adiciona item ao livro do jogador
+    public void AdicionarItemAoLivro(string jogadorID, LivroItem item)
+    {
+        if (!livrosPorJogador.ContainsKey(jogadorID))
+        {
+            CriarLivroParaJogador(jogadorID);
+        }
+        livrosPorJogador[jogadorID].Add(item);
+    }
+
+    // Recupera o livro do jogador atual
+    public List<LivroItem> ObterLivroDoJogador(string jogadorID)
+    {
+        if (!livrosPorJogador.ContainsKey(jogadorID))
+        {
+            CriarLivroParaJogador(jogadorID);
+        }
+        return livrosPorJogador[jogadorID];
     }
 }
