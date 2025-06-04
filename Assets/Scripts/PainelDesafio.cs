@@ -31,6 +31,8 @@ public class PainelDesafio : MonoBehaviour
     public GameObject imagemLetraI;
     public GameObject imagemLetraO;
     public GameObject imagemLetraU;
+    public InventarioVisual inventarioVisual;
+
 
     void Start()
     {
@@ -182,6 +184,11 @@ public class PainelDesafio : MonoBehaviour
                 imagem = Resources.Load<Sprite>("Componentes tela nivel 1/urso");
                 sinalLibras = Resources.Load<Sprite>("Componentes tela nivel 1/sinalUrso");
             }
+            if (inventarioVisual != null && imagem != null)
+            {
+                inventarioVisual.AdicionarItem(imagem);
+            }
+
             LivroItem itemTeste = new LivroItem
             {
                 palavraPortugues = botoesResposta[desafios[indiceDesafioatual].indiceCorreto].GetComponentInChildren<TMP_Text>().text,
