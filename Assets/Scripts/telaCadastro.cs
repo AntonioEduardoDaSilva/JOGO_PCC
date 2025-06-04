@@ -18,7 +18,7 @@ public class telaCadastro : MonoBehaviour
     public GameObject painelErroIdadeNegativa;
 
     [Header("Painel de Sucesso")]
-    public GameObject painelSucesso; // <- novo painel
+    public GameObject painelSucesso;
 
     public void CadastrarJogador()
     {
@@ -64,6 +64,6 @@ public class telaCadastro : MonoBehaviour
         painelErroCampos.SetActive(false);
         painelErroUsuario.SetActive(false);
         painelErroIdadeNegativa.SetActive(false);
-        painelSucesso.SetActive(false); // <- certifique-se que começa desativado
+        painelSucesso.SetActive(false);
     }
 }

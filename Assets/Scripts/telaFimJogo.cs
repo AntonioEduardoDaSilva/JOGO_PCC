@@ -10,14 +10,14 @@ public class telaFimJogo : MonoBehaviour
         {
             GerenciadorJogadores.instancia.jogadorAtual.ResetarVidas();
         }
-        string cenaJogo = PlayerPrefs.GetString("UltimaCena", "TelaNivel1"); // "Nivel1" como fallback
+        string cenaJogo = PlayerPrefs.GetString("UltimaCena", "TelaNivel1"); 
         SceneManager.LoadScene(cenaJogo);
     }
 
     // Vai para a tela inicial
     public void IrParaTelaInicial()
     {
-        SceneManager.LoadScene("TelaInicial"); // Altere "TelaInicial" para o nome real
+        SceneManager.LoadScene("TelaInicial");
     }
 
     // Vai para a seleção de níveis

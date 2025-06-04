@@ -15,5 +15,8 @@ public class ItemLivroUI : MonoBehaviour
         imagemSinal.sprite = item.sinalLibras;
         textoPalavra.text = item.palavraPortugues;
         textoComodo.text = "Missão: " + item.comodoAprendido;
+
+        imagemItem.rectTransform.sizeDelta = new Vector2(200, 200); // ou o valor que você quiser
+        imagemSinal.rectTransform.sizeDelta = new Vector2(200, 200); // mesmo valor para padronizar
     }
 }

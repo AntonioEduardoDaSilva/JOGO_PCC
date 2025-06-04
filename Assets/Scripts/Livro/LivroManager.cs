@@ -7,7 +7,7 @@ public class LivroManager : MonoBehaviour
     public Transform containerLivro;
     public GameObject prefabItemLivro;
 
-    private string jogadorAtualID = GerenciadorJogadores.instancia.jogadorAtual.nomeUsuario; // Substitua pelo ID real do jogador logado
+    private string jogadorAtualID = GerenciadorJogadores.instancia.jogadorAtual.nomeUsuario;
 
     void Start()
     {

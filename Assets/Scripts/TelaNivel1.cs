@@ -6,6 +6,6 @@ public class TelaNivel1 : MonoBehaviour
     // Este método deve ser chamado pelo botão
     public void CarregarNivel1()
     {
-        SceneManager.LoadScene("TelaNivel1"); // Substitua "Nivel1" pelo nome exato da sua cena
+        SceneManager.LoadScene("TelaNivel1");
     }
 }
