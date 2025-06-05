@@ -3,11 +3,9 @@ using UnityEngine;
 public class PersonagemController : MonoBehaviour
 {
     public float velocidade = 5f;
-
     private Rigidbody2D rb;
-    private Animator animator;
+    public Animator animator;
     private SpriteRenderer spriteRenderer;
-
     private Vector2 direcaoTeclado;
     private Vector2 direcaoUI;
 
@@ -21,10 +19,10 @@ public class PersonagemController : MonoBehaviour
     void Update()
     {
         // Movimento pelo teclado
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
+        float Horizontal = Input.GetAxisRaw("Horizontal");
+        float Vertical = Input.GetAxisRaw("Vertical");
 
-        direcaoTeclado = new Vector2(moveX, moveY).normalized;
+        direcaoTeclado = new Vector2(Horizontal, Vertical).normalized;
 
         // Determina direção final (teclado + UI)
         Vector2 direcaoFinal = (direcaoTeclado + direcaoUI).normalized;
