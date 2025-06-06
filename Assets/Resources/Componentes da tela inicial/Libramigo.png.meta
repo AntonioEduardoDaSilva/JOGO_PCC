@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Libramigo_0: 4110465768791148710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

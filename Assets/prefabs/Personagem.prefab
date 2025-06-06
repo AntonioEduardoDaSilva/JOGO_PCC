@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8727098728990093450}
   - component: {fileID: -7340693555089026110}
   - component: {fileID: 2188450158961570156}
+  - component: {fileID: 2179266334338201923}
   m_Layer: 0
   m_Name: Personagem
   m_TagString: personagem
@@ -133,6 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 5
+  animator: {fileID: 0}
 --- !u!114 &2427250189177850784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidade: 5
+  animator: {fileID: 0}
 --- !u!60 &2188450158961570156
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -237,3 +240,25 @@ PolygonCollider2D:
       - {x: 0.14541247, y: 0.11528348}
       - {x: 0.06, y: 0.21517007}
   m_UseDelaunayMesh: 0
+--- !u!95 &2179266334338201923
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897183498479781421}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6b80712507ed6c84cba81c07bc903da3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

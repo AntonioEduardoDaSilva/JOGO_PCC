@@ -27,17 +27,29 @@ public class PersonagemController : MonoBehaviour
         // Determina direção final (teclado + UI)
         Vector2 direcaoFinal = (direcaoTeclado + direcaoUI).normalized;
 
-        // Atualiza animações
-        animator.SetFloat("Horizontal", direcaoFinal.x);
-        animator.SetFloat("Vertical", direcaoFinal.y);
-        animator.SetBool("IsMoving", direcaoFinal.magnitude > 0.1f);
-
-        // FlipX para reutilizar a animação direita para esquerda
-        if (direcaoFinal.x < -0.1f)
-            spriteRenderer.flipX = true;
-        else if (direcaoFinal.x > 0.1f)
-            spriteRenderer.flipX = false;
+        // Animação baseada apenas na direção final
+        if (direcaoFinal.y > 0)
+        {
+            animator.Play("Move_up");
+        }
+        else if (direcaoFinal.y < 0)
+        {
+            animator.Play("Move_down");
+        }
+        else if (direcaoFinal.x > 0)
+        {
+            animator.Play("Move_right");
+        }
+        else if (direcaoFinal.x < 0)
+        {
+            animator.Play("Move_left");
+        }
+        else if (direcaoFinal.x == 0 && direcaoFinal.y == 0)
+        {
+            animator.Play("Idle");
+        }
     }
+
 
     void FixedUpdate()
     {

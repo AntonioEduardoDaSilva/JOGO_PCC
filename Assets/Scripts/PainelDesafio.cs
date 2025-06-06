@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class PainelDesafio : MonoBehaviour
 {
     public GameObject painelDesafio;
+    public GameObject painelInterno;
     public GameObject sinalPositivo;
     public GameObject sinalNegativo;
     public Button[] botoesResposta;
@@ -113,6 +114,8 @@ public class PainelDesafio : MonoBehaviour
             ioio.SetActive(false);
         if (urso != null)
             urso.SetActive(false);
+        if (painelInterno != null)
+            painelInterno.SetActive(false);
     }
     void mostrarObjetos()
     {
@@ -128,6 +131,8 @@ public class PainelDesafio : MonoBehaviour
             oculos.SetActive(true);
         if (urso != null)
             urso.SetActive(true);
+        if (painelInterno != null)
+            painelInterno.SetActive(true);
     }
     public void AtualizarImagem()
     {
