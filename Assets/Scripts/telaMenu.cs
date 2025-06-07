@@ -14,9 +14,9 @@ public class telaMenu : MonoBehaviour
     {
 
     }
-    public void irParaTelaNiveis()
+    public void irParaTelaIntrodutoria()
     {
-        SceneManager.LoadScene("TelaNiveis");
+        SceneManager.LoadScene("TelaIntrodutoria");
     }
     public void irParaTelaIncial()
     {

@@ -1054,7 +1054,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1788266275}
         m_TargetAssemblyTypeName: telaMenu, Assembly-CSharp
-        m_MethodName: irParaTelaNiveis
+        m_MethodName: irParaTelaIntrodutoria
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

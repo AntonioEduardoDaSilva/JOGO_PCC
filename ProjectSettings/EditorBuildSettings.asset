@@ -32,6 +32,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CENAS/LivroInterativo.unity
     guid: a6cb66c93d87cee448fb27f0dbc10b40
+  - enabled: 1
+    path: Assets/CENAS/TelaIntrodutoria.unity
+    guid: e0d5d71fd7eb90e4e9915244f326421f
+  - enabled: 1
+    path: Assets/CENAS/Nivel1Introducao.unity
+    guid: ff6d7d2250364ff46a1c5fbd430fc99b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

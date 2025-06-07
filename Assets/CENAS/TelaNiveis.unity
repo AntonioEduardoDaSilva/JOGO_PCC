@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 26686199}
   - component: {fileID: 26686198}
   - component: {fileID: 26686200}
+  - component: {fileID: 26686201}
   m_Layer: 5
   m_Name: quadro de fundo
   m_TagString: Untagged
@@ -211,6 +212,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0eb1da9b3c8b9fc43881a0b6e337a873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &26686201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26686196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfe6206c9175b8b42afe09f0dde9196c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &46591025
@@ -1565,18 +1578,18 @@ PrefabInstance:
     - target: {fileID: 6685993038564573458, guid: f8e1ec9faa0444848856f713f0baa7dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 26686200}
+      objectReference: {fileID: 26686201}
     - target: {fileID: 6685993038564573458, guid: f8e1ec9faa0444848856f713f0baa7dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6685993038564573458, guid: f8e1ec9faa0444848856f713f0baa7dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CarregarNivel1
+      value: irParaTelaNivel1Introducao
       objectReference: {fileID: 0}
     - target: {fileID: 6685993038564573458, guid: f8e1ec9faa0444848856f713f0baa7dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TelaNivel1, Assembly-CSharp
+      value: TelaIntrodutoria, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6685993038564573458, guid: f8e1ec9faa0444848856f713f0baa7dc, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
