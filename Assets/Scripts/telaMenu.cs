@@ -26,5 +26,9 @@ public class telaMenu : MonoBehaviour
     {
         SceneManager.LoadScene("LivroInterativo");
     }
+    public void irParaTrelaMenu()
+    {
+        SceneManager.LoadScene("TelaMenu");
+    }
 
 }

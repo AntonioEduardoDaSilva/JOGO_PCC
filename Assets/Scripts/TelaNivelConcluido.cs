@@ -1,29 +1,25 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TelaNivel1 : MonoBehaviour
+public class TelaNivelConcluido : MonoBehaviour
 {
-    public GameObject cadeadoNivel2;
     private Jogador jogador;
-
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         jogador = GerenciadorJogadores.instancia.jogadorAtual;
     }
+
+    // Update is called once per frame
     void Update()
     {
-        proximoNivel();
-    }
-    // Este método deve ser chamado pelo botão
-    public void CarregarNivel1()
-    {
-        SceneManager.LoadScene("TelaNivel1");
+
     }
     public void proximoNivel()
     {
         if (jogador.pontos == 5)
         {
-            cadeadoNivel2.SetActive(false);
+            SceneManager.LoadScene("TelaNivel2");
         }
     }
 }

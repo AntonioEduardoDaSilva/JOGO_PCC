@@ -19,4 +19,18 @@ public class EmpurrarObjetos : MonoBehaviour
             rb.AddForce(direcao.normalized * forcaEmpurrar, ForceMode.Force);
         }
     }
+    private void OnCollisionEnter(Collision collision)
+{
+    if (collision.gameObject.CompareTag("Empurravel"))
+    {
+        Rigidbody rb = collision.rigidbody;
+        if (rb != null && !rb.isKinematic)
+        {
+            Vector3 direcao = collision.contacts[0].point - transform.position;
+            direcao = direcao.normalized;
+            rb.AddForce(direcao * 10f, ForceMode.Impulse);
+        }
+    }
+}
+
 }

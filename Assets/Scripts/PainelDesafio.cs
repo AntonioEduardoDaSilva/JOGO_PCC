@@ -37,14 +37,14 @@ public class PainelDesafio : MonoBehaviour
 
     void Start()
     {
-       desafios = new Desafio[]
-        {
+        desafios = new Desafio[]
+         {
             new Desafio(new string[] { "A", "S", "E", "M" }, 0, aviao, imagemLetraA),
             new Desafio(new string[] { "G", "H", "E", "U" }, 2, espelho, imagemLetraE),
             new Desafio(new string[] { "L", "O", "U", "I" }, 3, ioio, imagemLetraI),
             new Desafio(new string[] { "N", "O", "P", "A" }, 1, oculos, imagemLetraO),
             new Desafio(new string[] { "A", "I", "T", "U" }, 3, urso, imagemLetraU)
-        };
+         };
         painelDesafio.SetActive(false);
         sinalPositivo.SetActive(false);
         sinalNegativo.SetActive(false);
@@ -67,6 +67,10 @@ public class PainelDesafio : MonoBehaviour
         AtualizarPontosUI();
         AtualizarCoracoes();
     }
+    void Update()
+    {
+        nivelConcluido();
+    }
     public void AbrirPainel()
     {
         if (!desafios[indiceDesafioatual].concluido)
@@ -76,10 +80,17 @@ public class PainelDesafio : MonoBehaviour
             AtribuirListeners();
 
             esconderObjetos();
-            
+
         }
     }
-   public void AtualizarTextosDosBotoes()
+    public void nivelConcluido()
+    {
+        if (jogador.pontos == 5)
+        {
+            SceneManager.LoadScene("NivelConcluido");
+        }
+    }
+    public void AtualizarTextosDosBotoes()
     {
         // Textos definidos localmente aqui
         string[] novosTextos = desafios[indiceDesafioatual].alternativas;

@@ -12,6 +12,7 @@ TagManager:
   - Zona
   - espelho
   - personagem
+  - Empurravel
   layers:
   - Default
   - TransparentFX
