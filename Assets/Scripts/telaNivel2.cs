@@ -18,4 +18,8 @@ public class telaNivel2 : MonoBehaviour
     {
         SceneManager.LoadScene("TelaNivel2");
     }
+    public void cenaNivel3()
+    {
+        SceneManager.LoadScene("TelaNivel3");
+    }
 }
