@@ -10,9 +10,11 @@ public class painelDesafio2 : MonoBehaviour
     public GameObject geladeiraFechada;
     public GameObject fogao;
     public GameObject painelRespostaErrada;
+    public GameObject painelAcertoFinal;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        painelAcertoFinal.SetActive(false);
         painelDesafio.SetActive(false);
         painelRespostaErrada.SetActive(false);
         mostrarObjetos();
@@ -26,6 +28,7 @@ public class painelDesafio2 : MonoBehaviour
     public void AbrirPainel()
     {
         painelDesafio.SetActive(true);
+        geladeiraAberta.SetActive(false);
         esconderObjetos();
     }
     void esconderObjetos()

@@ -85,7 +85,7 @@ public class PainelDesafio : MonoBehaviour
     }
     public void nivelConcluido()
     {
-        if (jogador.pontos == 5)
+        if (jogador.pontos >= 5)
         {
             SceneManager.LoadScene("NivelConcluido");
         }
