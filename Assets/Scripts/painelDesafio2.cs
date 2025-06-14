@@ -11,6 +11,7 @@ public class painelDesafio2 : MonoBehaviour
     public GameObject fogao;
     public GameObject painelRespostaErrada;
     public GameObject painelAcertoFinal;
+    //public GameObject ovo;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

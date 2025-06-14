@@ -24,6 +24,7 @@ public class AssociadorLibras : MonoBehaviour
     public GameObject geladeiraAberta;
     public GameObject geladeiraFechada;
     public GameObject fogao;
+    //public GameObject ovo;
     private Jogador jogador;
     public TMP_Text pontosTexto;
     public Image[] coracoes;
