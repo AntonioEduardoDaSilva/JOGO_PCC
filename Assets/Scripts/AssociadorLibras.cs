@@ -24,7 +24,8 @@ public class AssociadorLibras : MonoBehaviour
     public GameObject geladeiraAberta;
     public GameObject geladeiraFechada;
     public GameObject fogao;
-    //public GameObject ovo;
+    public GameObject ovo;
+    public GameObject pao;
     private Jogador jogador;
     public TMP_Text pontosTexto;
     public Image[] coracoes;
@@ -64,12 +65,14 @@ public class AssociadorLibras : MonoBehaviour
             armario.SetActive(true);
         if (mesa != null)
             mesa.SetActive(true);
-        if (geladeiraAberta != null)
-            geladeiraAberta.SetActive(true);
         if (geladeiraFechada != null)
             geladeiraFechada.SetActive(true);
         if (fogao != null)
             fogao.SetActive(true);
+        if (ovo != null)
+            ovo.SetActive(true);
+        if (pao != null)
+            pao.SetActive(true);
     }
 
     void SelecionarSinal(Par par)
