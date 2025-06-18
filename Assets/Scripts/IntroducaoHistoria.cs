@@ -7,7 +7,7 @@ public class IntroducaoHistoria : MonoBehaviour
     public TextMeshProUGUI textoUI;
     [TextArea(3, 10)]
     public string textoHistoria;
-    public float velocidade = 0.05f;
+    public float velocidade = 0.2f;
 
     void Start()
     {
@@ -24,7 +24,7 @@ public class IntroducaoHistoria : MonoBehaviour
         }
 
         // Opcional: esperar um tempo e depois ocultar o texto ou carregar cena
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(0.5f);
         // gameObject.SetActive(false); // Oculta
         // SceneManager.LoadScene("NomeDaCena"); // Carrega outra cena
     }

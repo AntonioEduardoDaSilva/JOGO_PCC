@@ -9,15 +9,25 @@ public class AssociadorLibras : MonoBehaviour
     public class Par
     {
         public Button botaoSinal;
-        public string letraCorreta;
-        public bool acertou = false;
+        [HideInInspector] public string letraCorreta;
+        [HideInInspector] public bool acertou = false;
     }
 
+    [System.Serializable]
+    public class Desafio
+    {
+        public string nomeDesafio;
+        public Sprite[] imagensSinais;
+        public string[] letrasCorretas;
+        public GameObject objetoAtiador;
+    }
+    public GameObject botaoColetar;
     public Par[] pares;
     public Button[] botoesLetra;
+    public Desafio[] desafios;
     public GameObject painelErro;
-    public GameObject painelAcertoFinal; // Novo painel
-    public GameObject painelDesafio;     // Painel a ser fechado no final
+    public GameObject painelAcertoFinal;
+    public GameObject painelDesafio;
     public GameObject personagem;
     public GameObject armario;
     public GameObject mesa;
@@ -26,20 +36,24 @@ public class AssociadorLibras : MonoBehaviour
     public GameObject fogao;
     public GameObject ovo;
     public GameObject pao;
+
     private Jogador jogador;
     public TMP_Text pontosTexto;
     public Image[] coracoes;
+    private int indiceDesafioAtual = -1;
 
     private Par sinalSelecionado = null;
 
     void Start()
     {
+        if (botaoColetar != null)
+            botaoColetar.SetActive(false);
         jogador = GerenciadorJogadores.instancia.jogadorAtual;
         painelAcertoFinal.SetActive(false);
         painelErro.SetActive(false);
-        painelAcertoFinal.SetActive(false);
         jogador.ResetarVidas();
         AtualizarCoracoes();
+        AtualizarPontosUI();
 
         foreach (Par par in pares)
         {
@@ -50,13 +64,14 @@ public class AssociadorLibras : MonoBehaviour
         {
             letra.onClick.AddListener(() => VerificarLetra(letra));
         }
-        AtualizarPontosUI();
     }
+
     void Update()
     {
         AtualizarCoracoes();
         AtualizarPontosUI();
     }
+
     void mostrarObjetos()
     {
         if (personagem != null)
@@ -69,8 +84,6 @@ public class AssociadorLibras : MonoBehaviour
             geladeiraFechada.SetActive(true);
         if (fogao != null)
             fogao.SetActive(true);
-        if (ovo != null)
-            ovo.SetActive(true);
         if (pao != null)
             pao.SetActive(true);
     }
@@ -86,20 +99,30 @@ public class AssociadorLibras : MonoBehaviour
 
         par.botaoSinal.image.color = Color.yellow;
     }
+
     void AtualizarPontosUI()
     {
         if (pontosTexto != null)
-        {
             pontosTexto.text = $"PONTOS: {jogador.pontos}";
-        }
     }
+
     void AtualizarCoracoes()
     {
         for (int i = 0; i < coracoes.Length; i++)
-        {
             coracoes[i].enabled = (i < jogador.vidas);
+    }
+    void DestruirObjetoDoDesafioAtual()
+{
+    if (indiceDesafioAtual >= 0 && indiceDesafioAtual < desafios.Length)
+    {
+        GameObject ativador = desafios[indiceDesafioAtual].objetoAtiador;
+        if (ativador != null)
+        {
+            Destroy(ativador);
         }
     }
+}
+
 
     void VerificarLetra(Button botaoLetra)
     {
@@ -118,10 +141,10 @@ public class AssociadorLibras : MonoBehaviour
             sinalSelecionado.botaoSinal.image.color = Color.green;
             botaoLetra.image.color = Color.green;
 
-            // Verifica se todos os pares foram acertados
             if (TodosParesAcertados())
             {
                 StartCoroutine(MostrarPainelAcertoFinal());
+                DestruirObjetoDoDesafioAtual();
             }
         }
         else
@@ -130,12 +153,10 @@ public class AssociadorLibras : MonoBehaviour
             AtualizarCoracoes();
             StartCoroutine(MostrarPainelErro());
             sinalSelecionado.botaoSinal.image.color = Color.white;
-            Debug.Log($"Resposta errada! Vidas restantes: {jogador.vidas}");
 
             if (!jogador.EstaVivo())
             {
                 jogador.pontos = 5;
-                Debug.Log("Game Over!");
                 PlayerPrefs.SetString("UltimaCena", SceneManager.GetActiveScene().name);
                 SceneManager.LoadScene("FimJogo");
             }
@@ -147,10 +168,7 @@ public class AssociadorLibras : MonoBehaviour
     bool TodosParesAcertados()
     {
         foreach (Par par in pares)
-        {
-            if (!par.acertou)
-                return false;
-        }
+            if (!par.acertou) return false;
         return true;
     }
 
@@ -168,7 +186,40 @@ public class AssociadorLibras : MonoBehaviour
         painelAcertoFinal.SetActive(false);
         painelDesafio.SetActive(false);
         mostrarObjetos();
-        Destroy(painelDesafio);
-
+        painelDesafio.SetActive(false);
     }
+
+    public void CarregarDesafio(int indice)
+{
+    if (indice < 0 || indice >= desafios.Length) return;
+
+    indiceDesafioAtual = indice; // ← armazena o índice atual
+
+    Desafio desafio = desafios[indice];
+
+    for (int i = 0; i < pares.Length; i++)
+    {
+        pares[i].acertou = false;
+        pares[i].botaoSinal.interactable = true;
+        pares[i].botaoSinal.image.color = Color.white;
+
+        if (i < desafio.imagensSinais.Length)
+            pares[i].botaoSinal.image.sprite = desafio.imagensSinais[i];
+
+        if (i < desafio.letrasCorretas.Length)
+            pares[i].letraCorreta = desafio.letrasCorretas[i];
+    }
+
+    for (int i = 0; i < botoesLetra.Length; i++)
+    {
+        botoesLetra[i].interactable = true;
+        botoesLetra[i].image.color = Color.white;
+
+        if (i < desafio.letrasCorretas.Length)
+            botoesLetra[i].GetComponentInChildren<TextMeshProUGUI>().text = desafio.letrasCorretas[i];
+    }
+
+    painelDesafio.SetActive(true);
+}
+
 }
