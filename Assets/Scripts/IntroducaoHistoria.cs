@@ -7,7 +7,7 @@ public class IntroducaoHistoria : MonoBehaviour
     public TextMeshProUGUI textoUI;
     [TextArea(3, 10)]
     public string textoHistoria;
-    public float velocidade = 0.2f;
+    public float velocidade = 0.5f;
 
     void Start()
     {

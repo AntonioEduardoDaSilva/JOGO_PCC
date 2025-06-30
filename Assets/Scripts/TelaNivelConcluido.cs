@@ -19,7 +19,7 @@ public class TelaNivelConcluido : MonoBehaviour
     {
         if (jogador.pontos == 5)
         {
-            SceneManager.LoadScene("TelaNivel2");
+            SceneManager.LoadScene("Nivel2Introducao");
         }
     }
 }

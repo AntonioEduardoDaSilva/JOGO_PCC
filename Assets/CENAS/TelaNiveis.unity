@@ -1211,9 +1211,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 26686202}
-        m_TargetAssemblyTypeName: telaNivel2, Assembly-CSharp
-        m_MethodName: cenaNivel2
+      - m_Target: {fileID: 26686201}
+        m_TargetAssemblyTypeName: TelaIntrodutoria, Assembly-CSharp
+        m_MethodName: irParaTelaNivel2Introducao
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
