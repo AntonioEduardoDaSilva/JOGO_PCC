@@ -26,6 +26,10 @@ public class TelaIntrodutoria : MonoBehaviour
     {
         SceneManager.LoadScene("Nivel2Introducao");
     }
+    public void irParaTelaNivel3Introducao()
+    {
+        SceneManager.LoadScene("Nivel3Introducao");
+    }
     public void irParaTelaNivel1()
     {
         SceneManager.LoadScene("TelaNivel1");
@@ -33,5 +37,9 @@ public class TelaIntrodutoria : MonoBehaviour
     public void irParaTelaNivel2()
     {
         SceneManager.LoadScene("TelaNivel2");
+    }
+    public void irParaTelaNivel3()
+    {
+        SceneManager.LoadScene("TelaNivel3");
     }
 }
