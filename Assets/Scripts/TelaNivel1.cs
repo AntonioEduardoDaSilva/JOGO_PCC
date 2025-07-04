@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class TelaNivel1 : MonoBehaviour
 {
     public GameObject cadeadoNivel2;
+    public GameObject cadeadoNivel3;
     private Jogador jogador;
 
     void Start()
@@ -21,9 +22,13 @@ public class TelaNivel1 : MonoBehaviour
     }
     public void proximoNivel()
     {
-        if (jogador.pontos == 5)
+        if (jogador.pontos >= 5)
         {
             cadeadoNivel2.SetActive(false);
+        }
+        if (jogador.pontos >= 17)
+        {
+            cadeadoNivel3.SetActive(false);
         }
     }
 }

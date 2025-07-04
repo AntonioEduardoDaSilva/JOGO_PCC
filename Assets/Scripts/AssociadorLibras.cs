@@ -36,7 +36,12 @@ public class AssociadorLibras : MonoBehaviour
     public GameObject fogao;
     public GameObject ovo;
     public GameObject pao;
-
+    public GameObject queijo;
+    public GameObject tomate;
+    public GameObject manteiga;
+    public GameObject maca;
+    public GameObject kiwi;
+    public GameObject uva;
     private Jogador jogador;
     public TMP_Text pontosTexto;
     public Image[] coracoes;
@@ -84,8 +89,20 @@ public class AssociadorLibras : MonoBehaviour
             geladeiraFechada.SetActive(true);
         if (fogao != null)
             fogao.SetActive(true);
-        if (pao != null)
+        if (pao != null && GameManager.lancheEscolhido == "pao")
             pao.SetActive(true);
+        if (queijo != null && GameManager.lancheEscolhido == "pao")
+            queijo.SetActive(true);
+        if (manteiga != null && (GameManager.lancheEscolhido == "pao" || GameManager.lancheEscolhido == "omelete"))
+            manteiga.SetActive(true);
+        if (maca != null && GameManager.lancheEscolhido == "salada")
+            maca.SetActive(true);
+        if (kiwi != null && GameManager.lancheEscolhido == "salada")
+            kiwi.SetActive(true);
+        if (uva != null && GameManager.lancheEscolhido == "salada")
+            uva.SetActive(true);
+        if (tomate != null && GameManager.lancheEscolhido == "omelete")
+            tomate.SetActive(true);
     }
 
     void SelecionarSinal(Par par)
@@ -123,7 +140,6 @@ public class AssociadorLibras : MonoBehaviour
     }
 }
 
-
     void VerificarLetra(Button botaoLetra)
     {
         if (sinalSelecionado == null) return;
@@ -140,6 +156,7 @@ public class AssociadorLibras : MonoBehaviour
 
             sinalSelecionado.botaoSinal.image.color = Color.green;
             botaoLetra.image.color = Color.green;
+            StartCoroutine(MostrarPainelAcerto());
 
             if (TodosParesAcertados())
             {
@@ -188,38 +205,43 @@ public class AssociadorLibras : MonoBehaviour
         mostrarObjetos();
         painelDesafio.SetActive(false);
     }
-
+    System.Collections.IEnumerator MostrarPainelAcerto()
+    {
+        painelAcertoFinal.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        painelAcertoFinal.SetActive(false);
+    }
     public void CarregarDesafio(int indice)
-{
-    if (indice < 0 || indice >= desafios.Length) return;
-
-    indiceDesafioAtual = indice; // ← armazena o índice atual
-
-    Desafio desafio = desafios[indice];
-
-    for (int i = 0; i < pares.Length; i++)
     {
-        pares[i].acertou = false;
-        pares[i].botaoSinal.interactable = true;
-        pares[i].botaoSinal.image.color = Color.white;
+        if (indice < 0 || indice >= desafios.Length) return;
 
-        if (i < desafio.imagensSinais.Length)
-            pares[i].botaoSinal.image.sprite = desafio.imagensSinais[i];
+        indiceDesafioAtual = indice; // ← armazena o índice atual
 
-        if (i < desafio.letrasCorretas.Length)
-            pares[i].letraCorreta = desafio.letrasCorretas[i];
+        Desafio desafio = desafios[indice];
+
+        for (int i = 0; i < pares.Length; i++)
+        {
+            pares[i].acertou = false;
+            pares[i].botaoSinal.interactable = true;
+            pares[i].botaoSinal.image.color = Color.white;
+
+            if (i < desafio.imagensSinais.Length)
+                pares[i].botaoSinal.image.sprite = desafio.imagensSinais[i];
+
+            if (i < desafio.letrasCorretas.Length)
+                pares[i].letraCorreta = desafio.letrasCorretas[i];
+        }
+
+        for (int i = 0; i < botoesLetra.Length; i++)
+        {
+            botoesLetra[i].interactable = true;
+            botoesLetra[i].image.color = Color.white;
+
+            if (i < desafio.letrasCorretas.Length)
+                botoesLetra[i].GetComponentInChildren<TextMeshProUGUI>().text = desafio.letrasCorretas[i];
+        }
+
+        painelDesafio.SetActive(true);
     }
-
-    for (int i = 0; i < botoesLetra.Length; i++)
-    {
-        botoesLetra[i].interactable = true;
-        botoesLetra[i].image.color = Color.white;
-
-        if (i < desafio.letrasCorretas.Length)
-            botoesLetra[i].GetComponentInChildren<TextMeshProUGUI>().text = desafio.letrasCorretas[i];
-    }
-
-    painelDesafio.SetActive(true);
-}
 
 }

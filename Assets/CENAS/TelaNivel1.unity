@@ -7891,6 +7891,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Panel_controle
       objectReference: {fileID: 0}
+    - target: {fileID: 4768633895319952492, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6606961660173493546, guid: 356b011d762a98b469872c71e3bb0940, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.42900002
@@ -8095,6 +8099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90ac16f8950214b46bc0465fbb2a43ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  painel: {fileID: 0}
 --- !u!1001 &2284846117584774908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8186,6 +8191,26 @@ PrefabInstance:
     - target: {fileID: 3899469504273766702, guid: a49dcac00123e3e498d7a8853b536540, type: 3}
       propertyPath: m_Name
       value: Panel_Resposta_errada
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899469504273766702, guid: a49dcac00123e3e498d7a8853b536540, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459205347605815102, guid: a49dcac00123e3e498d7a8853b536540, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 71.84195
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459205347605815102, guid: a49dcac00123e3e498d7a8853b536540, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 60.242706
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459205347605815102, guid: a49dcac00123e3e498d7a8853b536540, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459205347605815102, guid: a49dcac00123e3e498d7a8853b536540, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8401,6 +8426,22 @@ PrefabInstance:
     - target: {fileID: 3243571013756927186, guid: 73056ac62ac86ea43bb156c37066725c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025881791278925561, guid: 73056ac62ac86ea43bb156c37066725c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 67.696396
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025881791278925561, guid: 73056ac62ac86ea43bb156c37066725c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 61.557808
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025881791278925561, guid: 73056ac62ac86ea43bb156c37066725c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7025881791278925561, guid: 73056ac62ac86ea43bb156c37066725c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 25.08
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

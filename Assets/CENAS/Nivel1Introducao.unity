@@ -481,10 +481,10 @@ MonoBehaviour:
   textoUI: {fileID: 1789706970}
   textoHistoria: "\"Filho(a), a prima Lu\xEDsa vai dormir no seu quarto! Que tal
     prepararmos um cantinho s\xF3 pra ela? Ela vai adorar ver que tudo foi feito
-    com carinho!\"\r\n\"Voc\xEA pode me ajudar a colocar o travesseiro, o brinquedo
-    favorito e o livro dela no lugar certo?\"\r\nEnquanto organiza os objetos, aprenda
-    como se fala e como se faz o sinal de cada um. Eles v\xE3o direto para o Livro
-    Interativo!\r\nNeste n\xEDvel, vamos aprender sinais e palavras com vogais.\r\n"
+    com carinho!\"\r\n\"Voc\xEA pode me ajudar a juntar os seus brinquedos e organizar
+    o quarto para sua prima?\"\r\nEnquanto organiza os objetos, aprenda como se fala
+    e como se faz o sinal de cada um.\r\nNeste n\xEDvel, vamos aprender sinais e
+    palavras com vogais.\r\n"
   velocidade: 0.05
 --- !u!1001 &1789706968
 PrefabInstance:

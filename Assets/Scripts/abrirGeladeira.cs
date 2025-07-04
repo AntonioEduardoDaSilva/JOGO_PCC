@@ -6,6 +6,8 @@ public class AbrirGeladeira : MonoBehaviour
     public GameObject geladeiraFechada;
     public GameObject botaoabrir;
     public GameObject ovo;
+    public GameObject queijo;
+    public GameObject uva;
     private bool isOpen;
     public string tagDoJogador = "personagem";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -13,6 +15,10 @@ public class AbrirGeladeira : MonoBehaviour
     {
         if (ovo != null)
             ovo.SetActive(false);
+        if (uva != null)
+            uva.SetActive(false);
+        if (queijo != null)
+            queijo.SetActive(false);
         if (geladeiraAberta != null)
             geladeiraAberta.SetActive(false);
         if (botaoabrir != null)
@@ -22,7 +28,9 @@ public class AbrirGeladeira : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        mostrarQueijo();
+        mostrarOvo();
+        mostrarUva();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -35,7 +43,7 @@ public class AbrirGeladeira : MonoBehaviour
     }
     void mostrarOvo()
     {
-        if (ovo != null && isOpen)
+        if (ovo != null && isOpen && GameManager.lancheEscolhido=="omelete")
         {
             ovo.SetActive(true);
         }
@@ -44,6 +52,34 @@ public class AbrirGeladeira : MonoBehaviour
             if (ovo != null)
             {
                 ovo.SetActive(false);
+            }
+        }
+    }
+    void mostrarUva()
+    {
+        if (uva != null && isOpen && GameManager.lancheEscolhido=="salada")
+        {
+            uva.SetActive(true);
+        }
+        else
+        {
+            if (uva != null)
+            {
+                uva.SetActive(false);
+            }
+        }
+    }
+    void mostrarQueijo()
+    {
+        if (queijo != null && isOpen && GameManager.lancheEscolhido=="pao")
+        {
+            queijo.SetActive(true);
+        }
+        else
+        {
+            if (queijo != null)
+            {
+                queijo.SetActive(false);
             }
         }
     }
@@ -65,5 +101,7 @@ public class AbrirGeladeira : MonoBehaviour
         geladeiraAberta.SetActive(true);
         aberta();
         mostrarOvo();
+        mostrarQueijo();
+        mostrarUva();
     }
 }

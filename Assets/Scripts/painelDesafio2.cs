@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class painelDesafio2 : MonoBehaviour
 {
@@ -13,6 +14,14 @@ public class painelDesafio2 : MonoBehaviour
     public GameObject painelAcertoFinal;
     public GameObject ovo;
     public GameObject pao;
+    public GameObject queijo;
+    public GameObject tomate;
+    public GameObject manteiga;
+    public GameObject maca;
+    public GameObject kiwi;
+    public GameObject uva;
+    private Jogador jogador;
+
     //public GameObject ovo;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,12 +30,20 @@ public class painelDesafio2 : MonoBehaviour
         painelDesafio.SetActive(false);
         painelRespostaErrada.SetActive(false);
         mostrarObjetos();
+        jogador = GerenciadorJogadores.instancia.jogadorAtual;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        nivelConcluido();
+    }
+    public void nivelConcluido()
+    {
+        if (jogador.pontos >= 17)
+        {
+            SceneManager.LoadScene("NivelConcluido");
+        }
     }
     public void AbrirPainel()
     {
@@ -52,6 +69,18 @@ public class painelDesafio2 : MonoBehaviour
             ovo.SetActive(false);
         if (pao != null)
             pao.SetActive(false);
+        if (queijo != null)
+            queijo.SetActive(false);
+        if (tomate != null)
+            tomate.SetActive(false);
+        if (manteiga != null)
+            manteiga.SetActive(false);
+        if (maca != null)
+            maca.SetActive(false);
+        if (kiwi != null)
+            kiwi.SetActive(false);
+        if (uva != null)
+            uva.SetActive(false);
     }
     void mostrarObjetos()
     {
@@ -69,7 +98,17 @@ public class painelDesafio2 : MonoBehaviour
             fogao.SetActive(true);
         //if (ovo != null)
         //    ovo.SetActive(true);
-        if (pao != null)
+        if (pao != null && GameManager.lancheEscolhido == "pao")
             pao.SetActive(true);
+        if (tomate != null && GameManager.lancheEscolhido == "omelete")
+            tomate.SetActive(true);
+        if (manteiga != null && (GameManager.lancheEscolhido == "pao" || GameManager.lancheEscolhido == "omelete"))
+            manteiga.SetActive(true);
+        if (maca != null && GameManager.lancheEscolhido == "salada")
+            maca.SetActive(true);
+        if (kiwi != null && GameManager.lancheEscolhido == "salada")
+            kiwi.SetActive(true);
+        if (uva != null && GameManager.lancheEscolhido=="salada")
+            uva.SetActive(true);
     }
 }

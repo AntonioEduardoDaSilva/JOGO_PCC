@@ -13,6 +13,7 @@ TagManager:
   - espelho
   - personagem
   - Empurravel
+  - BotaoColetar
   layers:
   - Default
   - TransparentFX

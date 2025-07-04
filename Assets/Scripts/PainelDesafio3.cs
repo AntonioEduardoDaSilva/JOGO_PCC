@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using TMPro;
 
 public class PainelDesafio3 : MonoBehaviour
 {
@@ -9,9 +10,22 @@ public class PainelDesafio3 : MonoBehaviour
     public Image imagemDoObjetoUI; // <- Adicione esse campo
 
     private Movel movelAtual;
-    void start()
+    private Jogador jogador;
+    public TMP_Text pontosTexto;
+    public Image[] coracoes;
+
+    void Start()
     {
         painelUI.SetActive(false);
+        jogador = GerenciadorJogadores.instancia.jogadorAtual;
+        jogador.ResetarVidas();
+        AtualizarCoracoes();
+        AtualizarPontosUI();
+    }
+    void Update()
+    {
+        AtualizarCoracoes();
+        AtualizarPontosUI();
     }
 
     public void AbrirPainel(Movel movel)
@@ -26,7 +40,16 @@ public class PainelDesafio3 : MonoBehaviour
         imagemDoObjetoUI.sprite = movel.imagemDoObjeto;
         imagemDoObjetoUI.enabled = true;
     }
-
+    void AtualizarCoracoes()
+    {
+        for (int i = 0; i < coracoes.Length; i++)
+            coracoes[i].enabled = (i < jogador.vidas);
+    }
+    void AtualizarPontosUI()
+    {
+        if (pontosTexto != null)
+            pontosTexto.text = $"PONTOS: {jogador.pontos}";
+    }
     public void EscolherResposta(string nomeEscolhido)
     {
         if (nomeEscolhido == movelAtual.nomeMovel)

@@ -17,9 +17,16 @@ public class TelaNivelConcluido : MonoBehaviour
     }
     public void proximoNivel()
     {
-        if (jogador.pontos >= 5)
+        if (jogador.pontos == 5)
         {
             SceneManager.LoadScene("Nivel2Introducao");
+        }
+    }
+    public void proximoNivel3()
+    {
+        if (jogador.pontos == 17)
+        {
+            SceneManager.LoadScene("Nivel3Introducao");
         }
     }
 }

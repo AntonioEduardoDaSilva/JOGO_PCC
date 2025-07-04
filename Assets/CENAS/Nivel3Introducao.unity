@@ -786,11 +786,10 @@ MonoBehaviour:
   textoUI: {fileID: 437391146}
   textoHistoria: "\u201COlha s\xF3, que tal fazermos uma surpresa? Vamos montar cartazes
     com palavras e sinais para deixar a Lu\xEDsa feliz assim que ela chegar!\u201D\r\n\"N\xF3s
-    podemos juntar palavras com os sinais certos e at\xE9 montar frases simples.\"\r\nEssa
-    \xE9 uma miss\xE3o criativa! Voc\xEA vai arrastar palavras e sinais para formar
-    pares e frases. Depois, os cartazes podem decorar a casa \u2014 e o seu livro
-    vai ficar ainda mais completo!\r\nRefor\xE7amos as vogais e consoantes aprendidas
-    at\xE9 aqui com palavras novas em contexto.\r\n"
+    podemos juntar palavras com os sinais certos.\"\r\nEssa \xE9 uma miss\xE3o criativa!
+    Voc\xEA vai associar palavras e sinais para formar pares. Depois, os cartazes
+    podem decorar a casa.\r\nRefor\xE7aremos as vogais e consoantes aprendidas at\xE9
+    aqui com palavras novas em contexto.\r\n"
   velocidade: 0.5
 --- !u!114 &2006263250
 MonoBehaviour:
