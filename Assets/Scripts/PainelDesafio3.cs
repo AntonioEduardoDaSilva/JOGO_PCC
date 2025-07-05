@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PainelDesafio3 : MonoBehaviour
 {
@@ -13,10 +14,14 @@ public class PainelDesafio3 : MonoBehaviour
     private Jogador jogador;
     public TMP_Text pontosTexto;
     public Image[] coracoes;
+    public GameObject sinalPositivo;
+    public GameObject sinalNegativo;
 
     void Start()
     {
         painelUI.SetActive(false);
+        sinalNegativo.SetActive(false);
+        sinalPositivo.SetActive(false);
         jogador = GerenciadorJogadores.instancia.jogadorAtual;
         jogador.ResetarVidas();
         AtualizarCoracoes();
@@ -27,7 +32,12 @@ public class PainelDesafio3 : MonoBehaviour
         AtualizarCoracoes();
         AtualizarPontosUI();
     }
-
+    void FecharPainel()
+    {
+        sinalNegativo.SetActive(false);
+        sinalPositivo.SetActive(false);
+        painelUI.SetActive(false);
+    }
     public void AbrirPainel(Movel movel)
     {
         movelAtual = movel;
@@ -57,13 +67,34 @@ public class PainelDesafio3 : MonoBehaviour
             movelAtual.foiRespondido = true;
             movelAtual.MostrarLibrasAoLado();
             DesabilitarBotao(nomeEscolhido);
-            painelUI.SetActive(false);
+            sinalPositivo.SetActive(true);
+            Invoke("FecharPainel", 2f);
         }
         else
         {
-            // Feedback de erro (opcional)
+            Debug.Log("Resposta errada: mostrando painel de erro");
+
+            jogador.PerderVida();
+            AtualizarCoracoes();
+            StartCoroutine(MostrarErroTemporario());
+
+            Debug.Log($"Resposta errada! Vidas restantes: {jogador.vidas}");
+
+            if (!jogador.EstaVivo())
+            {
+                Debug.Log("Game Over!");
+                PlayerPrefs.SetString("UltimaCena", SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene("FimJogo");
+            }
         }
     }
+    private System.Collections.IEnumerator MostrarErroTemporario()
+{
+    sinalNegativo.SetActive(true);        // Mostra o painel de erro
+    yield return new WaitForSeconds(2f); // Espera 2 segundos
+    sinalNegativo.SetActive(false);       // Esconde o painel de erro
+}
+
 
     void DesabilitarBotao(string nome)
     {
