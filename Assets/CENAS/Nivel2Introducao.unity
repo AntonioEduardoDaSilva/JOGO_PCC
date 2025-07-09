@@ -1833,9 +1833,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   painelEscolherLanche: {fileID: 0}
   desafio: {fileID: 0}
-  isSalada: 0
-  isOmelete: 0
-  isPao: 0
 --- !u!114 &1447082759
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1850,9 +1847,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   painelEscolherLanche: {fileID: 4004970}
   desafio: {fileID: 0}
-  isSalada: 0
-  isOmelete: 0
-  isPao: 0
 --- !u!1 &1814550173
 GameObject:
   m_ObjectHideFlags: 0

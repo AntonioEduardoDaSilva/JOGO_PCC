@@ -5,9 +5,9 @@ public class TelaIntrodutoria : MonoBehaviour
 {
     public GameObject painelEscolherLanche;
     public painelDesafio2 desafio;
-    public bool isSalada = false;
-    public bool isOmelete = false;
-    public bool isPao = false;
+    //public bool isSalada = false;
+    //public bool isOmelete = false;
+    //public bool isPao = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
