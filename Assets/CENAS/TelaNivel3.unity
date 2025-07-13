@@ -5117,7 +5117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeMovel: relogio
-  imagemLibras: {fileID: 0}
+  imagemLibras: {fileID: 935367798112455826, guid: 3984e4286646ff94b89ee0dcaf517475, type: 3}
   imagemDoObjeto: {fileID: -4663049737647753178, guid: 572ca8a9cab05eb4d9a26de091f58fab, type: 3}
   foiRespondido: 0
 --- !u!1660057539 &9223372036854775807

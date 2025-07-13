@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cadeadoNivel2: {fileID: 2117727762}
+  cadeadoNivel3: {fileID: 174834064}
 --- !u!114 &26686201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe6206c9175b8b42afe09f0dde9196c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  painelEscolherLanche: {fileID: 0}
+  desafio: {fileID: 0}
 --- !u!114 &26686202
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ public class PainelDesafio3 : MonoBehaviour
     {
         AtualizarCoracoes();
         AtualizarPontosUI();
+        nivelConcluido();
     }
     void FecharPainel()
     {
@@ -50,6 +51,13 @@ public class PainelDesafio3 : MonoBehaviour
         imagemDoObjetoUI.sprite = movel.imagemDoObjeto;
         imagemDoObjetoUI.enabled = true;
     }
+    public void nivelConcluido()
+    {
+        if (jogador.pontos >= 22)
+        {
+            SceneManager.LoadScene("NivelConcluido");
+        }
+    }
     void AtualizarCoracoes()
     {
         for (int i = 0; i < coracoes.Length; i++)
@@ -67,6 +75,7 @@ public class PainelDesafio3 : MonoBehaviour
             movelAtual.foiRespondido = true;
             movelAtual.MostrarLibrasAoLado();
             DesabilitarBotao(nomeEscolhido);
+            jogador.pontos++;
             sinalPositivo.SetActive(true);
             Invoke("FecharPainel", 2f);
         }
