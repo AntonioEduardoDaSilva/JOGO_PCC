@@ -8,7 +8,8 @@ public class PainelDesafio3 : MonoBehaviour
 {
     public GameObject painelUI;
     public List<Button> botoes;
-    public Image imagemDoObjetoUI; // <- Adicione esse campo
+    public Image imagemDoObjetoUI;
+    public Transform painelOrnamentacao;
 
     private Movel movelAtual;
     private Jogador jogador;
@@ -16,6 +17,7 @@ public class PainelDesafio3 : MonoBehaviour
     public Image[] coracoes;
     public GameObject sinalPositivo;
     public GameObject sinalNegativo;
+    public GameObject personagem;
 
     void Start()
     {
@@ -74,10 +76,12 @@ public class PainelDesafio3 : MonoBehaviour
         {
             movelAtual.foiRespondido = true;
             movelAtual.MostrarLibrasAoLado();
+            movelAtual.MostrarLibrasUI(painelOrnamentacao);
             DesabilitarBotao(nomeEscolhido);
             jogador.pontos++;
             sinalPositivo.SetActive(true);
             Invoke("FecharPainel", 2f);
+            personagem.SetActive(true);
         }
         else
         {

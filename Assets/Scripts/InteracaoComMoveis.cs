@@ -3,6 +3,7 @@ using UnityEngine;
 public class InteracaoComMoveis : MonoBehaviour
 {
     public PainelDesafio3 painelDesafio;
+    public GameObject personagem;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -11,6 +12,7 @@ public class InteracaoComMoveis : MonoBehaviour
         {
             Debug.Log("Colidiu com: " + movel.nomeMovel);
             painelDesafio.AbrirPainel(movel);
+            painelDesafio.personagem.SetActive(false);
         }
     }
 }
