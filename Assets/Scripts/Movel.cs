@@ -5,11 +5,12 @@ using UnityEngine.Video;
 public class Movel : MonoBehaviour
 {
     public string nomeMovel;
-    public Sprite imagemLibras;
+    //public Sprite imagemLibras;
     public Sprite imagemDoObjeto;
+    public Sprite imagemLibras;
     public VideoClip videoLibras; // vídeo do sinal em Libras
     public RenderTexture renderTexture; // textura para exibir o vídeo
-    public Vector3 offsetLateral = new Vector3(2f, 0f, 0f); // posição relativa ao móvel
+    public Vector3 offsetLateral = new Vector3(1f, 0f, 0f); // posição relativa ao móvel
 
     [HideInInspector] public bool foiRespondido = false;
     private GameObject videoQuad; // guarda referência do quad criado (evita duplicação)
@@ -57,6 +58,7 @@ public class Movel : MonoBehaviour
             Debug.LogWarning("Vídeo ou RenderTexture não atribuído! Usando imagem estática.");
 
             // Fallback: Mostrar sprite ao lado do móvel
+            
             GameObject img = new GameObject("Libras_" + nomeMovel);
             SpriteRenderer sr = img.AddComponent<SpriteRenderer>();
             sr.sprite = imagemLibras;
@@ -64,11 +66,20 @@ public class Movel : MonoBehaviour
             sr.sortingLayerName = "Default";
             sr.sortingOrder = 10;
             img.transform.localScale = new Vector3(0.3f, 0.3f, 1f);
+            
         }
     }
 
     public void MostrarLibrasUI(Transform painelUI)
     {
+        GameObject img = new GameObject("Libras_" + nomeMovel);
+        SpriteRenderer sr = img.AddComponent<SpriteRenderer>();
+        sr.sprite = imagemLibras;
+        img.transform.position = transform.position + offsetLateral;
+        sr.sortingLayerName = "Default";
+        sr.sortingOrder = 10;
+        img.transform.localScale = new Vector3(0.3f, 0.3f, 1f);
+        /*
         if (videoLibras != null && renderTexture != null)
         {
             GameObject videoGO = new GameObject("VideoLibras_" + nomeMovel, typeof(RectTransform));
@@ -102,6 +113,8 @@ public class Movel : MonoBehaviour
             Image img = novaImagem.AddComponent<Image>();
             img.sprite = imagemLibras;
             img.rectTransform.anchoredPosition = new Vector2(100, 0);
-        }
+            
+    
+        }*/
     }
 }

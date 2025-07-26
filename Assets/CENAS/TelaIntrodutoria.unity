@@ -362,7 +362,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 685973713}
-  - {fileID: 816374876}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -472,17 +471,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816374875}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 680184210}
+  m_Father: {fileID: 1309977284}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15200001, y: 0}
   m_AnchorMax: {x: 0.84916663, y: 1}
-  m_AnchoredPosition: {x: -1.2000122, y: 39.26999}
-  m_SizeDelta: {x: 4.4000244, y: 446.46002}
+  m_AnchoredPosition: {x: -1.1199341, y: 3.7306519}
+  m_SizeDelta: {x: 581.43976, y: 146.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &816374877
 MonoBehaviour:
@@ -643,6 +642,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 816374876}
   - {fileID: 588440977}
   m_Father: {fileID: 685973713}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -725,9 +725,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   painelEscolherLanche: {fileID: 0}
   desafio: {fileID: 0}
-  isSalada: 0
-  isOmelete: 0
-  isPao: 0
 --- !u!1 &1818784382
 GameObject:
   m_ObjectHideFlags: 0

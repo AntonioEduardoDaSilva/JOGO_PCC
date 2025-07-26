@@ -262,7 +262,6 @@ GameObject:
   - component: {fileID: 53315914}
   - component: {fileID: 53315916}
   - component: {fileID: 53315915}
-  - component: {fileID: 53315917}
   m_Layer: 5
   m_Name: tapete
   m_TagString: Untagged
@@ -327,24 +326,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53315913}
   m_CullTransparentMesh: 1
---- !u!114 &53315917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53315913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5065455ce76342748910adcaa22a8289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeMovel: 
-  imagemLibras: {fileID: 0}
-  imagemDoObjeto: {fileID: 0}
-  videoLibras: {fileID: 0}
-  renderTexture: {fileID: 0}
-  foiRespondido: 0
 --- !u!1 &126113241 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2897183498479781421, guid: 6bec203faf9540b4aa0671971741b345, type: 3}
@@ -793,10 +774,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeMovel: estante
-  imagemLibras: {fileID: 0}
   imagemDoObjeto: {fileID: 8318488240630470600, guid: 98eed756a2f232e44b08f80189987104, type: 3}
+  imagemLibras: {fileID: 7717363707898377641, guid: 959bb411babf4ec40a04f63ba43f2574, type: 3}
   videoLibras: {fileID: 32900000, guid: 2232446ee0a20204792959e0871fd0b3, type: 3}
-  renderTexture: {fileID: 8400000, guid: 7caae7491c31c244eb646aa460238879, type: 2}
+  renderTexture: {fileID: 8400000, guid: 37111f2cb1ddf0844918e3779e41ed21, type: 2}
+  offsetLateral: {x: 2, y: 0, z: 0}
   foiRespondido: 0
 --- !u!1 &264542090
 GameObject:
@@ -934,10 +916,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeMovel: chamine
-  imagemLibras: {fileID: 0}
   imagemDoObjeto: {fileID: -7966090902672215464, guid: fbf050f823128e540950ce0ed0d0c889, type: 3}
+  imagemLibras: {fileID: 5200662761576607440, guid: 76176f2c9f5f30247909a13af2eafc1d, type: 3}
   videoLibras: {fileID: 32900000, guid: a7f7e66ca4121e943aac735c384fe5c5, type: 3}
-  renderTexture: {fileID: 8400000, guid: c91c629be626d6b479f7b3927bbf8bd4, type: 2}
+  renderTexture: {fileID: 8400000, guid: fd0bf49872c548447af33ce46a3dd510, type: 2}
+  offsetLateral: {x: 2, y: 0, z: 0}
   foiRespondido: 0
 --- !u!1 &292306932
 GameObject:
@@ -1644,10 +1627,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeMovel: mesa
-  imagemLibras: {fileID: 0}
   imagemDoObjeto: {fileID: -4830278217956542665, guid: da08ee5f068d88745984a2f2a7f9ef26, type: 3}
+  imagemLibras: {fileID: 8536604051381262075, guid: 162c28994d705284a9fc7e9f1896a5f2, type: 3}
   videoLibras: {fileID: 32900000, guid: 327ed35717255f04d89575662612bc94, type: 3}
-  renderTexture: {fileID: 8400000, guid: 24869af1264a3be4190a7674ef5935b7, type: 2}
+  renderTexture: {fileID: 8400000, guid: 7fbda7ea825b6064da8080ba02d1686b, type: 2}
+  offsetLateral: {x: 2, y: 0, z: 0}
   foiRespondido: 0
 --- !u!1 &679359243
 GameObject:
@@ -1661,7 +1645,6 @@ GameObject:
   - component: {fileID: 679359246}
   - component: {fileID: 679359245}
   - component: {fileID: 679359247}
-  - component: {fileID: 679359248}
   m_Layer: 5
   m_Name: gaveta
   m_TagString: Untagged
@@ -1772,24 +1755,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 78.64119, y: 154.44595}
   m_EdgeRadius: 0
---- !u!114 &679359248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679359243}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5065455ce76342748910adcaa22a8289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeMovel: 
-  imagemLibras: {fileID: 0}
-  imagemDoObjeto: {fileID: 0}
-  videoLibras: {fileID: 0}
-  renderTexture: {fileID: 0}
-  foiRespondido: 0
 --- !u!1 &757521621
 GameObject:
   m_ObjectHideFlags: 0
@@ -3153,10 +3118,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeMovel: sofa
-  imagemLibras: {fileID: 0}
   imagemDoObjeto: {fileID: 625466960096594224, guid: 34b8173c0598beb43a1e5575b0ff532f, type: 3}
+  imagemLibras: {fileID: 1049511304056530668, guid: 7de3054cf40729443b7156c3c8798e70, type: 3}
   videoLibras: {fileID: 32900000, guid: f8a5235d66949b148bf8ff5c5426bf1b, type: 3}
-  renderTexture: {fileID: 8400000, guid: 66f4e224b830e354f83b0046e1b17216, type: 2}
+  renderTexture: {fileID: 8400000, guid: db499fd6ed8d71e41a605945c8d33f66, type: 2}
+  offsetLateral: {x: 2, y: 0, z: 0}
   foiRespondido: 0
 --- !u!1 &1472981636
 GameObject:
@@ -5726,7 +5692,6 @@ GameObject:
   - component: {fileID: 2046853280}
   - component: {fileID: 2046853279}
   - component: {fileID: 2046853281}
-  - component: {fileID: 2046853282}
   m_Layer: 5
   m_Name: mesinha
   m_TagString: Untagged
@@ -5837,24 +5802,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 121.14555, y: 58.384705}
   m_EdgeRadius: 0
---- !u!114 &2046853282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046853277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5065455ce76342748910adcaa22a8289, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nomeMovel: 
-  imagemLibras: {fileID: 0}
-  imagemDoObjeto: {fileID: 0}
-  videoLibras: {fileID: 0}
-  renderTexture: {fileID: 0}
-  foiRespondido: 0
 --- !u!1 &2111301081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5991,10 +5938,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nomeMovel: relogio
-  imagemLibras: {fileID: 0}
   imagemDoObjeto: {fileID: -4663049737647753178, guid: 572ca8a9cab05eb4d9a26de091f58fab, type: 3}
+  imagemLibras: {fileID: -7694288030225904888, guid: 6b79d867513f197498c885e1ce512bf3, type: 3}
   videoLibras: {fileID: 32900000, guid: d6c1c786605cb73489b5c801d5abc357, type: 3}
-  renderTexture: {fileID: 8400000, guid: f723f38838532294fb66b4fb7a80e1c0, type: 2}
+  renderTexture: {fileID: 8400000, guid: d4f16ec9c15709c45b9597d5ed34d1e2, type: 2}
+  offsetLateral: {x: 2, y: 0, z: 0}
   foiRespondido: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

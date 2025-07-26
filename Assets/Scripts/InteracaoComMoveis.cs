@@ -11,6 +11,7 @@ public class InteracaoComMoveis : MonoBehaviour
         if (movel != null && !movel.foiRespondido)
         {
             Debug.Log("Colidiu com: " + movel.nomeMovel);
+            
             painelDesafio.AbrirPainel(movel);
             painelDesafio.personagem.SetActive(false);
         }

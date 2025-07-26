@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class PainelDesafio3 : MonoBehaviour
 {
@@ -40,19 +41,45 @@ public class PainelDesafio3 : MonoBehaviour
         sinalNegativo.SetActive(false);
         sinalPositivo.SetActive(false);
         painelUI.SetActive(false);
+
+        //MostrarTodasAsImagensDeLibras();
     }
+/*
+        void EsconderTodasAsImagensDeLibras()
+    {
+        Movel[] moveis = FindObjectsOfType<Movel>();
+        foreach (Movel m in moveis)
+        {
+            if (m.imagemLibras != null)
+                m.imagemLibras.GameObject.SetActive(false);
+        }
+    }
+
+    void MostrarTodasAsImagensDeLibras()
+    {
+        Movel[] moveis = FindObjectsOfType<Movel>();
+        foreach (Movel m in moveis)
+        {
+            if (m.foiRespondido && m.imagemLibras != null)
+                m.imagemLibras.gameObject.SetActive(true);
+        }
+    }
+*/
     public void AbrirPainel(Movel movel)
     {
         movelAtual = movel;
         painelUI.SetActive(true);
 
-        // Ativar todos os botões de Libras
-        foreach (Button b in botoes) b.gameObject.SetActive(true);
+        // Esconde todas as imagens de Libras
+        //EsconderTodasAsImagensDeLibras();
 
-        // Mostrar a imagem do objeto atual
+        foreach (Button b in botoes)
+            b.gameObject.SetActive(true);
+
         imagemDoObjetoUI.sprite = movel.imagemDoObjeto;
         imagemDoObjetoUI.enabled = true;
     }
+
     public void nivelConcluido()
     {
         if (jogador.pontos >= 22)
