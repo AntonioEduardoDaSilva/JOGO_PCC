@@ -42,36 +42,15 @@ public class PainelDesafio3 : MonoBehaviour
         sinalPositivo.SetActive(false);
         painelUI.SetActive(false);
 
-        //MostrarTodasAsImagensDeLibras();
-    }
-/*
-        void EsconderTodasAsImagensDeLibras()
-    {
-        Movel[] moveis = FindObjectsOfType<Movel>();
-        foreach (Movel m in moveis)
-        {
-            if (m.imagemLibras != null)
-                m.imagemLibras.GameObject.SetActive(false);
-        }
+        Movel.MostrarTodosLibras();
     }
 
-    void MostrarTodasAsImagensDeLibras()
-    {
-        Movel[] moveis = FindObjectsOfType<Movel>();
-        foreach (Movel m in moveis)
-        {
-            if (m.foiRespondido && m.imagemLibras != null)
-                m.imagemLibras.gameObject.SetActive(true);
-        }
-    }
-*/
     public void AbrirPainel(Movel movel)
     {
         movelAtual = movel;
         painelUI.SetActive(true);
 
-        // Esconde todas as imagens de Libras
-        //EsconderTodasAsImagensDeLibras();
+        Movel.EsconderTodosLibras();
 
         foreach (Button b in botoes)
             b.gameObject.SetActive(true);
@@ -130,9 +109,9 @@ public class PainelDesafio3 : MonoBehaviour
     }
     private System.Collections.IEnumerator MostrarErroTemporario()
 {
-    sinalNegativo.SetActive(true);        // Mostra o painel de erro
-    yield return new WaitForSeconds(2f); // Espera 2 segundos
-    sinalNegativo.SetActive(false);       // Esconde o painel de erro
+    sinalNegativo.SetActive(true);        
+    yield return new WaitForSeconds(2f); 
+    sinalNegativo.SetActive(false);       
 }
 
 

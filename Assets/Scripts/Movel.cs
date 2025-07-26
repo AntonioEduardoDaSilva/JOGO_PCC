@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class Movel : MonoBehaviour
 {
+    public static List<GameObject> objetosLibrasVisiveis = new List<GameObject>();
     public string nomeMovel;
     //public Sprite imagemLibras;
     public Sprite imagemDoObjeto;
@@ -31,6 +33,7 @@ public class Movel : MonoBehaviour
 
             // Criar plano (Quad) para o vídeo
             videoQuad = GameObject.CreatePrimitive(PrimitiveType.Quad);
+            objetosLibrasVisiveis.Add(videoQuad);
             videoQuad.name = "VideoQuad_" + nomeMovel;
             videoQuad.transform.position = transform.position + offsetLateral;
 
@@ -60,6 +63,7 @@ public class Movel : MonoBehaviour
             // Fallback: Mostrar sprite ao lado do móvel
             
             GameObject img = new GameObject("Libras_" + nomeMovel);
+            objetosLibrasVisiveis.Add(img);
             SpriteRenderer sr = img.AddComponent<SpriteRenderer>();
             sr.sprite = imagemLibras;
             img.transform.position = transform.position + offsetLateral;
@@ -69,6 +73,24 @@ public class Movel : MonoBehaviour
             
         }
     }
+    public static void EsconderTodosLibras()
+    {
+        foreach (GameObject obj in objetosLibrasVisiveis)
+        {
+            if (obj != null)
+                obj.SetActive(false);
+        }
+    }
+
+    public static void MostrarTodosLibras()
+    {
+        foreach (GameObject obj in objetosLibrasVisiveis)
+        {
+            if (obj != null)
+                obj.SetActive(true);
+        }
+    }
+
 
     public void MostrarLibrasUI(Transform painelUI)
     {
