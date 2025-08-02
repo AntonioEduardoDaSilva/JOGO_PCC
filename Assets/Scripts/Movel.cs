@@ -61,7 +61,7 @@ public class Movel : MonoBehaviour
             Debug.LogWarning("Vídeo ou RenderTexture não atribuído! Usando imagem estática.");
 
             // Fallback: Mostrar sprite ao lado do móvel
-            
+
             GameObject img = new GameObject("Libras_" + nomeMovel);
             objetosLibrasVisiveis.Add(img);
             SpriteRenderer sr = img.AddComponent<SpriteRenderer>();
@@ -70,6 +70,7 @@ public class Movel : MonoBehaviour
             sr.sortingLayerName = "Default";
             sr.sortingOrder = 10;
             img.transform.localScale = new Vector3(0.3f, 0.3f, 1f);
+            EsconderTodosLibras();
             
         }
     }
@@ -95,12 +96,14 @@ public class Movel : MonoBehaviour
     public void MostrarLibrasUI(Transform painelUI)
     {
         GameObject img = new GameObject("Libras_" + nomeMovel);
+        objetosLibrasVisiveis.Add(img);
         SpriteRenderer sr = img.AddComponent<SpriteRenderer>();
         sr.sprite = imagemLibras;
         img.transform.position = transform.position + offsetLateral;
         sr.sortingLayerName = "Default";
         sr.sortingOrder = 10;
         img.transform.localScale = new Vector3(0.3f, 0.3f, 1f);
+        EsconderTodosLibras();
         /*
         if (videoLibras != null && renderTexture != null)
         {

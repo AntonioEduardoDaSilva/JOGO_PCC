@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 3652
+  controlID: 29353
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -50,7 +50,7 @@ MonoBehaviour:
     x: 231
     y: 24
     width: 903
-    height: 421
+    height: 404
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 903, y: 400}
+  m_TargetSize: {x: 903, y: 383}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -85,8 +85,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -451.5
     m_HBaseRangeMax: 451.5
-    m_VBaseRangeMin: -200
-    m_VBaseRangeMax: 200
+    m_VBaseRangeMin: -191.5
+    m_VBaseRangeMax: 191.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -105,9 +105,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 903
-      height: 400
+      height: 383
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 451.5, y: 200}
+    m_Translation: {x: 451.5, y: 191.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -115,12 +115,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -451.5
-      y: -200
+      y: -191.5
       width: 903
-      height: 400
+      height: 383
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 903, y: 421}
+  m_LastWindowPixelSize: {x: 903, y: 404}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 3611
+  controlID: 29311
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 3571
+  controlID: 29302
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -245,7 +245,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 78b5ffff5cbeffff66bfffffe4ceffff34d5ffffa8e1fffffee4ffff0cfbffffc2dc0000f0dc000044dd00005edd00006add0000ecde000010df0000bcdf0000dedf0000eadf000048e00000a6e60000c2e60000
+      m_ExpandedIDs: 08adfeffc6aefeff60b4fefffcb6feffb2b7feff52bdfeff6ac0feff96c1feff16c8feffaccdfefff2cffeff12e6feffcafffeff143effff6243ffffea45ffff9a48ffff8a66ffff3668ffffd66dffff4a71fffff476ffffa277ffff7483ffffa285ffff6296ffffb697ffff04a4ffffa8a5ffff6cabffff02b9ffffb6beffffcac3ffffaecaffff28d2ffff84d7ffffcce3ffff76e4ffff04f6ffff0cfbffffa0b80000ceb80000f2ca000020cb0000eacb000006cc000004d800002ae1000058e10000a0ea0000ceea0000b4fb0000e2fb0000a4130100d2130100ba140100d6140100601e0100841e010092270100b6270100a2530100d0530100cc540100fa54010070560100ac560100b45601003cc001006ac00100ecfc010010fd01001e060200420602009c0702001a0802003e0802001a1102005011020098110200bc110200ea1a0200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -862,9 +862,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 3.4907749, y: -1.139777, z: 40.755264}
+    m_Target: {x: 3.580851, y: -0.63495857, z: 5.1921525}
     speed: 2
-    m_Value: {x: 3.4907749, y: -1.139777, z: 40.755264}
+    m_Value: {x: 3.580851, y: -0.63495857, z: 5.1921525}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -914,9 +914,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 6.842954
+    m_Target: 5.770876
     speed: 2
-    m_Value: 6.842954
+    m_Value: 5.770876
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1022,7 +1022,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Componentes tela nivel 1
+    - Assets/CENAS
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1032,16 +1032,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Componentes tela nivel 1
+  - Assets/CENAS
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\User\Documents\JOGO_PCC\JOGO PCC
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 152}
-    m_SelectedIDs: 10b50000
-    m_LastClickedID: 46352
-    m_ExpandedIDs: 0000000098b400009ab40000ffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: e8b70000
+    m_LastClickedID: 47080
+    m_ExpandedIDs: 0000000084b7000086b70000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1070,7 +1070,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000098b400009ab40000ffffff7f
+    m_ExpandedIDs: 0000000084b7000086b70000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1096,10 +1096,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: fcb0ffff
-    m_LastClickedInstanceID: -20228
+    m_SelectedInstanceIDs: 58b80000
+    m_LastClickedInstanceID: 47192
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000a6b2000030b100005e360100b6b1000096b0000042b000005ab1000000000000
+    m_ExpandedInstanceIDs: c6230000a6b2000030b100005e360100b6b1000096b0000042b000005ab1000000000000cad70000c2d70000f05301002ab9000022b9000026b900002eb90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1124,7 +1124,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 275}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 277
@@ -1150,9 +1150,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 506
+    y: 509
     width: 1134
-    height: 176
+    height: 173
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1321,7 +1321,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -20228
+  m_LastInspectedObjectInstanceID: 47192
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0

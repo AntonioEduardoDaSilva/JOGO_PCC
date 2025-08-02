@@ -46,11 +46,15 @@ public class AssociadorLibras : MonoBehaviour
     public TMP_Text pontosTexto;
     public Image[] coracoes;
     private int indiceDesafioAtual = -1;
+    public static int pontosNivel = 0;
+    public static int errosNivel = 0;
 
     private Par sinalSelecionado = null;
 
     void Start()
     {
+        pontosNivel = 0;
+        errosNivel = 0;
         if (botaoColetar != null)
             botaoColetar.SetActive(false);
         jogador = GerenciadorJogadores.instancia.jogadorAtual;
@@ -149,6 +153,7 @@ public class AssociadorLibras : MonoBehaviour
         if (sinalSelecionado.letraCorreta == letraClicada)
         {
             jogador.pontos++;
+            pontosNivel++;
             AtualizarPontosUI();
             sinalSelecionado.acertou = true;
             sinalSelecionado.botaoSinal.interactable = false;
@@ -167,6 +172,7 @@ public class AssociadorLibras : MonoBehaviour
         else
         {
             jogador.PerderVida();
+            errosNivel++;
             AtualizarCoracoes();
             StartCoroutine(MostrarPainelErro());
             sinalSelecionado.botaoSinal.image.color = Color.white;
@@ -174,7 +180,7 @@ public class AssociadorLibras : MonoBehaviour
             if (!jogador.EstaVivo())
             {
                 jogador.pontos = 5;
-                PlayerPrefs.SetString("UltimaCena", SceneManager.GetActiveScene().name);
+                PlayerPrefs.SetString("CenaAnterior", SceneManager.GetActiveScene().name);
                 SceneManager.LoadScene("FimJogo");
             }
         }

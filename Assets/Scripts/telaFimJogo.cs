@@ -10,7 +10,7 @@ public class telaFimJogo : MonoBehaviour
         {
             GerenciadorJogadores.instancia.jogadorAtual.ResetarVidas();
         }
-        string cenaJogo = PlayerPrefs.GetString("UltimaCena", "TelaNivel1"); 
+        string cenaJogo = PlayerPrefs.GetString("CenaAnterior", "TelaNivel1"); 
         SceneManager.LoadScene(cenaJogo);
     }
 

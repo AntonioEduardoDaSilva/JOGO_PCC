@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class PainelDesafio : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PainelDesafio : MonoBehaviour
     public GameObject oculos;
     public GameObject urso;
     private Jogador jogador;
+    public static int pontosNivel = 0;
+    public static int errosNivel = 0;
     //private bool desafioConcluido = false;
     //private bool desafioConcluido1 = false;
     //private int pontos = 0; 
@@ -37,6 +40,8 @@ public class PainelDesafio : MonoBehaviour
 
     void Start()
     {
+        pontosNivel = 0;
+        errosNivel = 0;
         desafios = new Desafio[]
          {
             new Desafio(new string[] { "A", "S", "E", "M" }, 0, aviao, imagemLetraA),
@@ -85,8 +90,9 @@ public class PainelDesafio : MonoBehaviour
     }
     public void nivelConcluido()
     {
-        if (jogador.pontos >= 5)
+        if (pontosNivel >= 5)
         {
+            PlayerPrefs.SetString("CenaAnterior", SceneManager.GetActiveScene().name);
             SceneManager.LoadScene("NivelConcluido");
         }
     }
@@ -214,6 +220,7 @@ public class PainelDesafio : MonoBehaviour
             };
             LivroData.instancia.AdicionarItemAoLivro(jogador.nomeUsuario, itemTeste);
             jogador.pontos++;
+            pontosNivel++;
             AtualizarPontosUI();
 
             if (desafios[indiceDesafioatual].objetoColetado != null)
@@ -230,6 +237,7 @@ public class PainelDesafio : MonoBehaviour
         else
         {
             jogador.PerderVida();
+            errosNivel++;
             AtualizarCoracoes();
             sinalNegativo.SetActive(true);
             Invoke("FecharPainelNegativo", 2f);
@@ -239,7 +247,7 @@ public class PainelDesafio : MonoBehaviour
             if (!jogador.EstaVivo())
             {
                 Debug.Log("Game Over!");
-                PlayerPrefs.SetString("UltimaCena", SceneManager.GetActiveScene().name);
+                PlayerPrefs.SetString("CenaAnterior", SceneManager.GetActiveScene().name);
                 SceneManager.LoadScene("FimJogo");
             }
         }

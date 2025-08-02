@@ -40,8 +40,9 @@ public class painelDesafio2 : MonoBehaviour
     }
     public void nivelConcluido()
     {
-        if (jogador.pontos >= 17)
+        if (AssociadorLibras.pontosNivel >= 12)
         {
+            PlayerPrefs.SetString("CenaAnterior", SceneManager.GetActiveScene().name);
             SceneManager.LoadScene("NivelConcluido");
         }
     }
